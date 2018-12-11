@@ -85,8 +85,8 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: #4286f4;
-	text-shadow: 1px 2px 1px #000000
+	color: #fff;
+	text-shadow: 1px 1px 3px #000000
 
 }
 
@@ -275,7 +275,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .btn {
-	font-family: 'Roboto Condensed', sans-serif;
+	font-family: 'Tahoma', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 13px;
@@ -317,8 +317,11 @@ textarea.form-control {
 }
 
 .btn-custom-2 {
-  background: #444 none repeat scroll 0 0;
-  border: 1px solid #444;
+  /*background: #444 none repeat scroll 0 0;*/
+  /*border: 1px solid #444;*/
+  background: #3c82cb none repeat scroll 0 0;
+  border: 1px solid #3c82cb;
+
   color: #fff;
 }
 
@@ -326,13 +329,13 @@ textarea.form-control {
 .btn-custom-2:focus,
 .btn-custom-2:active,
 .btn-custom-2.active {
-	background: #222;
-	border-color: #222;
+	background: #ccc
+	border-color: #ccc;
 	color: #fff;
 }
 
 .btn-custom-3 {
-	background: none;
+	background: #ccc
 	border: 1px solid #222;
 	color: #222
 }
@@ -439,7 +442,7 @@ textarea.form-control {
 }
 
 .module-subtitle {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: "Tahoma", serif;
 	font-style: italic;
 	font-size: 14px;
 }
@@ -561,7 +564,9 @@ textarea.form-control {
 
 .side-image {
 	position: absolute;
-	background: url(../images/about.jpg) scroll center no-repeat;
+	/*background: url(../images/about.jpg) scroll center no-repeat;*/
+	background: url(../new_images/profile_photo.jpg) scroll center no-repeat;
+
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 		 -o-background-size: cover;
@@ -707,7 +712,7 @@ figure {
 
 .caption-inner .portfolio-item-desc {
   color: #ddd;
-  font-family: Georgia,"Times New Roman",Times,serif;
+  font-family: "LemonMilk", serif;
   font-size: 13px;
   font-style: italic;
 }
@@ -757,7 +762,7 @@ figure {
 }
 
 .popup-subtitle {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: "Tahoma", serif;
 	font-style: italic;
 	font-size: 14px;
 }
@@ -832,13 +837,13 @@ figure {
   margin-bottom: 20px;
 }
 .tweet {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: "Tahoma", serif;
 	font-style: italic;
 	font-size: 16px;
 }
 
 .timePosted {
-	font: 400 13px/1.8 'Roboto Condensed', sans-serif;
+	font: 400 13px/1.8 'Tahoma', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin: 30px 0;
@@ -877,7 +882,8 @@ figure {
 /* ---------------------------------------------- */
 
 #footer {
-	background: #222;
+	/*background: #222;*/
+	background: #3c82cb;
 	text-align: center;
 	padding: 40px 0;
 	color: #FFF;
