@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: #fff;
+	color: #ffffff;
 	text-shadow: 1px 1px 3px #000000
 
 }
@@ -882,7 +882,6 @@ figure {
 /* ---------------------------------------------- */
 
 #footer {
-	/*background: #222;*/
 	background: #3c82cb;
 	text-align: center;
 	padding: 40px 0;
