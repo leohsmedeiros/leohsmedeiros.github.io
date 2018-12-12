@@ -5,8 +5,8 @@
  * General styles
 /* ---------------------------------------------- */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);*/
+/*@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400,300);*/
 
 @font-face {
 	font-family: "LemonMilk";
@@ -85,8 +85,8 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: #ffffff;
-	text-shadow: 1px 1px 3px #000000
+	color: #fff;
+	text-shadow: 1px 1px 7px #000000
 
 }
 
@@ -99,6 +99,8 @@ h3 {
 	font-size: 13px;
 	letter-spacing: 1px;
 	margin: 0 0 5px;
+	color: #001122;
+	text-shadow: none
 }
 
 h4 {
@@ -488,8 +490,9 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 #home {
-	background: url(../new_images/background.png);
-	background-color: #222;
+	/*background: url(../new_images/background.png);*/
+	/*background-color: #222;*/
+	background-color: #7cacdc;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -1003,20 +1006,23 @@ figure {
 }
 
 .scroll-up a {
-	background-color: rgba(135, 135, 135, 0.5);
+	/*background-color: rgba(135, 135, 135, 0.5);*/
+	background-color: rgba(124, 172, 220, 0.5);
 	display: block;
 	width: 28px;
 	height: 28px;
 	text-align: center;
-	color: #222;
+	color: #3c82cb;
 	font-size: 14px;
 	line-height: 30px;
 }
 
 .scroll-up a:hover,
 .scroll-up a:active {
-	background-color: rgba(235, 235, 235, .8);
-	color: #222;
+	/*background-color: rgba(235, 235, 235, .8);*/
+	background-color: rgba(124, 172, 220, 0.8);
+	/*color: #222;*/
+	color: #3c82cb;
 }
 
 /* ---------------------------------------------- /*
@@ -1221,7 +1227,8 @@ font-size: 14px;
 /* Preloader css */
 #loading{
 	/*background-color: #d64700;*/
-	background-image: url(../new_images/background.png);
+	/*background-image: url(../new_images/background.png);*/
+	background-color: #7cacdc;
 	height: 100%;
 	width: 100%;
 	position: fixed;
