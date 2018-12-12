@@ -907,7 +907,7 @@ figure {
 }
 
 .social-links a {
-	width: 36px;
+/*	width: 36px;
 	height: 36px;
 	display: block;
 	line-height: 35px;
@@ -917,12 +917,27 @@ figure {
 	   -moz-border-radius: 50%;
 			border-radius: 50%;
 	font-size: 14px;
-	color: rgba(255, 255, 255, .8);
+	color: rgba(255, 255, 255, .8);*/
+
+	width: 45px;
+	height: 45px;
+	display: block;
+	line-height: 45px;
+	text-align: center;
+	border: 1px solid rgba(66, 134, 244, .8);
+	-webkit-border-radius: 30%;
+	   -moz-border-radius: 30%;
+			border-radius: 30%;
+	font-size: 30px;
+	color: rgba(66, 134, 244, .8);
+
 }
 
 .social-links a:hover {
-	border: 1px solid rgba(255, 255, 255, .5);
-	color: rgba(255, 255, 255, .5);
+	/*border: 1px solid rgba(255, 255, 255, .5);*/
+	/*color: rgba(255, 255, 255, .5);*/
+	border: 1px solid rgba(66, 134, 244, .5);
+	color: rgba(66, 134, 244, .5);
 }
 
 /* ---------------------------------------------- /*
