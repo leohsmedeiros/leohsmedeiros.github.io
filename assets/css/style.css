@@ -37,6 +37,15 @@ a:hover {
 	color: #999;
 }
 
+i {
+	font-size: 40px;
+	color: white;
+}
+
+i a {
+	display: block;
+}
+
 /* ---------------------------------------------- /*
  * Transition elsements
 /* ---------------------------------------------- */
