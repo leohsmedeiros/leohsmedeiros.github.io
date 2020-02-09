@@ -408,15 +408,30 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .profilePhoto {
-
 	border-radius: 50%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 200px;
 	height: 200px;
 }
 
-.description {
-	margin: 30px;
+.containerProfile {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resumeLink {
+	font-size: large;
+    align-self: center;
+    padding: 5px 50px;
+    margin-top: 30px;
+    color: white;
+    background-color: #222;
+    color: white;
+}
+
+.resumeLink:hover, .resumeLink.active {
+	color: #f0f0f0;
 }
 
 .module {
@@ -914,7 +929,8 @@ figure {
 	text-align: center;
 	padding: 40px 0;
 	color: #FFF;
-	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1));
+	/* background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1)); */
+	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));
 }
 
 .copyright {
@@ -989,7 +1005,8 @@ figure {
 .navbar-custom,
 .navbar-custom .dropdown-menu {
 	/*background: #fff;*/
-	background: #7cacdc;
+	/* background: #7cacdc; */
+	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));
 	padding: 0;
 }
 

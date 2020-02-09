@@ -37,6 +37,8 @@
 
 	<!-- Custom styles CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+
+	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
 </head>
 <body>
 
@@ -131,11 +133,21 @@
 			</div>
 
 			<div class="row">
-				<img class="profilePhoto" src="assets/images/profile.jpg">
-				<p class="description"> An experienced Game/Android Developer with a demonstrated history of working in the computer software/game industry. Skilled in Statistical Data Analysis, Development of Mobile Applications and Game Programming with Unity3D.
-					Strong engineering professional graduated in Computer Science with focus on Computational Mathematics at PUC-GO. </p>
-	
-			</div><!-- .row -->
+				<div class="module-subtitle">
+					An experienced Game/Android Developer with a demonstrated history of working in the computer software/game industry.
+					Skilled in Statistical Data Analysis, Development of Mobile Applications and Game Programming with Unity3D.
+					Strong engineering professional graduated in Computer Science with focus on Computational Mathematics at PUC-GO.
+				</div>
+				<div class="module-line"></div>
+				<!-- <p class="description">
+					An experienced Game/Android Developer with a demonstrated history of working in the computer software/game industry. <br>
+					Skilled in Statistical Data Analysis, Development of Mobile Applications and Game Programming with Unity3D.<br>
+					Strong engineering professional graduated in Computer Science with focus on Computational Mathematics at PUC-GO.
+				</p> -->
+				<div class="containerProfile">
+					<img class="profilePhoto" src="assets/images/profile.jpg">
+					<a class="resumeLink" href="assets/resume/resume.pdf" target="_blank">Resume</a>
+				</div>
 		</div><!-- .container -->
 	</section>
 
@@ -163,7 +175,7 @@
 				<div class="col-sm-4">
 					<div class="iconbox wow bounceIn">
 						<div class="iconbox-icon">
-							<span class="fas fa-gamepad"></span>
+							<p class="fas fa-gamepad"></p>
 						</div>
 						<div class="iconbox-text" >
 							<h3 class="iconbox-title">Game Development</h3>
@@ -173,7 +185,9 @@
 				<div class="col-sm-4">
 					<div class="iconbox wow bounceIn">
 						<div class="iconbox-icon">
-							<span class="fas fa-mobile"></span>
+							<p class="fas fa-mobile-alt"></p>
+							<!-- <span class="iconify" data-icon="simple-line-icons:screen-smartphone" data-inline="false"></span> -->
+							<!-- <i class="fas fa-mobile" style="color: black;"></i> -->
 						</div>
 						<div class="iconbox-text" >
 							<h3 class="iconbox-title">Mobile Apps</h3>
@@ -183,10 +197,10 @@
 				<div class="col-sm-4">
 					<div class="iconbox wow bounceIn">
 						<div class="iconbox-icon">
-							<span class="fas fa-code"></span>
+							<p class="fa fa-code"></p>
 						</div>
 						<div class="iconbox-text" >
-							<h3 class="iconbox-title">Web sites</h3>
+							<h3 class="iconbox-title" >Web sites</h3>
 						</div>
 					</div>
 				</div>
@@ -227,7 +241,7 @@
 
 					<ul id="filter">
 						<li class="active" data-group="all">All</li>
-						<li data-group="my_games">My Games</li>
+						<li data-group="my_games">My Own Games</li>
 						<li data-group="company_game">Games for Companies</li>
 						<!-- <li data-group="apps">Apps</li> -->
 					</ul>
