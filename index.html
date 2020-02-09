@@ -37,6 +37,8 @@
 
 	<!-- Custom styles CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+
+	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
 </head>
 <body>
 
@@ -88,16 +90,17 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<!-- <a class="navbar-brand" href="index.html"> -->
-						<img src="assets/new_images/logo_cortada.png" style="height: 45px;">
-					<!-- </a> -->
+
+					<a href="#home">
+						<img src="assets/images/logo_cortada.png" style="height: 45px;">
+					</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#home">home</a></li>
-						<li><a href="#services">Services</a></li>
-						<li><a href="#portfolio">Works</a></li>
+						<li><a href="#whoiam">Who I am</a></li>
+						<li><a href="#services">What I do</a></li>
+						<li><a href="#portfolio">Projects</a></li>
 						<li><a href="#testimonial">Testimonial</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
@@ -112,6 +115,39 @@
 	<!-- Navigation end -->
 
 
+	<!-- Who am I start -->
+
+	<section id="whoiam" class="module">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 col-sm-offset-3">
+
+					<div class="module-header wow fadeInUp">
+						<h2 class="module-title">Who I am</h2>
+						<div class="module-line"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="module-subtitle">
+					An experienced Mobile Developer with a demonstrated history of working in the software industry.<br>
+					Skilled in Statistical Data Analysis, Development of Mobile Applications and Game Programming with Unity3D.<br>
+					Strong engineering professional graduated in Computer Science with emphasis on Computational Mathematics at PUC-GO.
+				</div>
+				<div class="module-line"></div>
+				<div class="containerProfile">
+					<img class="profilePhoto" src="assets/images/profile.jpg">
+					<a class="resumeLink" href="assets/resume/resume.pdf" target="_blank">Resume</a>
+				</div>
+		</div><!-- .container -->
+	</section>
+
+	<!-- Who am I end -->
+
 	<!-- Services start -->
 
 	<section id="services" class="module module-gray">
@@ -121,7 +157,7 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">Services</h2>
+						<h2 class="module-title">What I do</h2>
 						<div class="module-line"></div>
 					</div>
 
@@ -134,39 +170,30 @@
 				<div class="col-sm-4">
 					<div class="iconbox wow bounceIn">
 						<div class="iconbox-icon">
-							<span class="fas fa-gamepad"></span>
+							<p class="fas fa-gamepad"></p>
 						</div>
-						<div class="iconbox-text"  style="height: 80px;">
+						<div class="iconbox-text" >
 							<h3 class="iconbox-title">Game Development</h3>
-							<p>
-								Development of games for mobile, console and pc using Unity
-							</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="iconbox wow bounceIn">
 						<div class="iconbox-icon">
-							<span class="fab fa-android"></span>
+							<p class="fas fa-mobile-alt"></p>
 						</div>
-						<div class="iconbox-text" style="height: 80px;">
-							<h3 class="iconbox-title">Android Native</h3>
-							<p>
-								Development of native mobile apps, using Java or Kotlin
-							</p>
+						<div class="iconbox-text" >
+							<h3 class="iconbox-title">Mobile Apps</h3>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="iconbox wow bounceIn">
 						<div class="iconbox-icon">
-							<span class="fab fa-apple"></span>
+							<p class="fa fa-code"></p>
 						</div>
-						<div class="iconbox-text" style="height: 80px;">
-							<h3 class="iconbox-title">iOS Native</h3>
-							<p>
-								Development of native mobile apps, using Swift
-							</p>
+						<div class="iconbox-text" >
+							<h3 class="iconbox-title" >Web sites</h3>
 						</div>
 					</div>
 				</div>
@@ -187,7 +214,7 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">Works</h2>
+						<h2 class="module-title">Projects</h2>
 						<div class="module-line"></div>
 						<div class="module-subtitle">
 							Some of the jobs I've been doing throughout my career
@@ -207,7 +234,7 @@
 
 					<ul id="filter">
 						<li class="active" data-group="all">All</li>
-						<li data-group="my_games">My Games</li>
+						<li data-group="my_games">My Own Games</li>
 						<li data-group="company_game">Games for Companies</li>
 						<!-- <li data-group="apps">Apps</li> -->
 					</ul>
@@ -224,11 +251,26 @@
 
 			<li class="portfolio-item" data-groups="all my_games">
 				<figure>
-					<img src="assets/new_images/cosmo_rangers.jpeg" alt="">
+					<img src="assets/images/cosmo_rangers.jpeg" alt="">
 					<figcaption>
-						<a href="assets/new_images/cosmo_rangers.jpeg" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/cosmo_rangers.jpeg" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Cosmo Rangers</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/cosmo_rangers.jpeg" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-android">
+										<a href="https://play.google.com/store/apps/details?id=com.LeoMedeiros.CosmoRangerss&hl=pt_BR"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
 						</div>
 					</figcaption>
 				</figure>
@@ -236,11 +278,26 @@
 
 			<li class="portfolio-item" data-groups="all my_games">
 				<figure>
-					<img src="assets/new_images/cacadores_de_lendas.png" alt="">
+					<img src="assets/images/cacadores_de_lendas.png" alt="">
 					<figcaption>
-						<a href="assets/new_images/cacadores_de_lendas.png" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/cacadores_de_lendas.png" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Caçadores de Lendas</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/cacadores_de_lendas.png" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-android">
+										<a href="https://play.google.com/store/apps/details?id=com.inovapps.CacadoresDeLendas&hl=pt_BR"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
 						</div>
 					</figcaption>
 				</figure>
@@ -248,11 +305,26 @@
 
 			<li class="portfolio-item" data-groups="all company_game">
 				<figure>
-					<img src="assets/new_images/perigos_da_net.jpeg" alt="">
+					<img src="assets/images/perigos_da_net.jpeg" alt="">
 					<figcaption>
-						<a href="assets/new_images/perigos_da_net.jpeg" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/perigos_da_net.jpeg" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Perigos da Net</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/perigos_da_net.jpeg" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-youtube">
+										<a href="https://www.youtube.com/watch?v=-doWpIhVIJI"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
 						</div>
 					</figcaption>
 				</figure>
@@ -260,11 +332,27 @@
 
 			<li class="portfolio-item" data-groups="all company_game">
 				<figure>
-					<img src="assets/new_images/tombo.jpeg" alt="">
+					<img src="assets/images/tombo.jpeg" alt="">
 					<figcaption>
-						<a href="assets/new_images/tombo.jpeg" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/tombo.jpeg" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Tombo and the quest for the Game Over</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/tombo.jpeg" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-youtube">
+										<a href="https://www.youtube.com/watch?v=sQZy7SwdnVg"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
+
 						</div>
 					</figcaption>
 				</figure>
@@ -272,11 +360,27 @@
 
 			<li class="portfolio-item" data-groups="all my_games">
 				<figure>
-					<img src="assets/new_images/till_death.png" alt="">
+					<img src="assets/images/till_death.png" alt="">
 					<figcaption>
-						<a href="assets/new_images/till_death.png" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/till_death.png" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Till Death</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/till_death.png" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-youtube">
+										<a href="https://www.youtube.com/watch?v=tsKSAoqT8YU"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
+
 						</div>
 					</figcaption>
 				</figure>
@@ -284,11 +388,26 @@
 
 			<li class="portfolio-item" data-groups="all my_games">
 				<figure>
-					<img src="assets/new_images/gon.png" alt="">
+					<img src="assets/images/gon.png" alt="">
 					<figcaption>
-						<a href="assets/new_images/gon.png" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/gon.png" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Gon</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/gon.png" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-github">
+										<a href="https://github.com/leohsmedeiros/Gon"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
 						</div>
 					</figcaption>
 				</figure>
@@ -296,42 +415,32 @@
 
 			<li class="portfolio-item" data-groups="all company_game">
 				<figure>
-					<img src="assets/new_images/castle_defender.png" alt="">
+					<img src="assets/images/castle_defender.png" alt="">
 					<figcaption>
-						<a href="assets/new_images/castle_defender.png" class="simple-ajax-popup"></a>
+						<!-- <a href="assets/images/castle_defender.png" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title">Castle Defender</h3>
+
+							<ul class="social-links">
+								<li>
+									<i class="fas fa-image">
+										<a href="assets/images/castle_defender.png" class="simple-ajax-popup" style="width: 50%;"></a>
+									</i>
+								</li>
+								<li>
+									<i class="fab fa-youtube">
+										<a href="https://www.youtube.com/watch?v=Hu-XobiTGqk"
+											style="width: 50%; left: 50%" target="_blank"></a>
+									</i>
+								</li>
+							</ul>
+
+
 						</div>
 					</figcaption>
 				</figure>
 			</li>
 
-<!-- 			<li class="portfolio-item" data-groups="all video">
-				<figure>
-					<img src="assets/images/p5-5.jpg" alt="">
-					<figcaption>
-						<a href="assets/images/p5-5.jpg" class="simple-ajax-popup"></a>
-						<div class="caption-inner">
-							<h3 class="portfolio-item-title">Some work one</h3>
-							<div class="portfolio-item-desc">Video</div>
-						</div>
-					</figcaption>
-				</figure>
-			</li>
-
-			<li class="portfolio-item" data-groups="all image">
-				<figure>
-					<img src="assets/images/p6-6.jpg" alt="">
-					<figcaption>
-						<a href="assets/images/p6-6.jpg" class="simple-ajax-popup"></a>
-						<div class="caption-inner">
-							<h3 class="portfolio-item-title">Some work one</h3>
-							<div class="portfolio-item-desc">Image</div>
-						</div>
-					</figcaption>
-				</figure>
-			</li>
- -->
 		</ul><!-- .projects-container -->
 
 	</section>
@@ -401,37 +510,27 @@
 							Do you have any idea you would like to discuss about? Please, get in touch.
 						</div>
 						<div class="module-line"></div>
+
+						<ul class="social-links">
+							<li>
+								<a href="#" data-wow-delay=".4s" onclick="window.location.href = 'mailto:leohsmedeiros@gmail.com'; return false;"><span class="fas fa-envelope"></span></a>
+							</li>
+							<li>
+								<a href="https://github.com/leohsmedeiros" class="wow fadeInUp" data-wow-delay=".2s"><span class="fab fa-github"></span></a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/in/leonardo-medeiros-4236a329/" class="wow fadeInUp" data-wow-delay=".3s"><span class="fab fa-linkedin-in"></span></a>
+							</li>
+							<li>
+								<a href="https://www.facebook.com/leomedeiros89" class="wow fadeInUp"  data-wow-delay=".4s"><span class="fab fa-facebook-f"></span></a>
+							</li>
+							<li>
+								<i class="fab fa-instagram"></i>
+								<a href="https://www.instagram.com/leo.medeiros.dev" class="wow fadeInUp"  data-wow-delay=".4s"><span class="fab fa-instagram"></span></a>
+							</li>
+						</ul>
+
 					</div>
-
-				</div>
-
-			</div><!-- .row -->
-
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<form id="contact-form" action="#">
-						<div class="ajax-hidden">
-							<div class="form-group wow fadeInUp">
-								<label class="sr-only" for="c_name">Name</label>
-								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Email address</label>
-								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Your message"></textarea>
-							</div>
-
-							<button type="submit" class="btn btn-block btn-custom-2 wow fadeInUp" data-wow-delay=".3s">Send Message
-							</button>
-						</div>
-						<div class="ajax-response"></div>
-					</form>
 
 				</div>
 
@@ -448,18 +547,9 @@
 			<div class="row">
 
 				<div class="col-sm-12">
-
-					<ul class="social-links">
-						<li><a href="https://www.facebook.com/leomedeiros89" class="wow fadeInUp"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="https://github.com/leohsmedeiros" class="wow fadeInUp" data-wow-delay=".2s"><i class="fab fa-github"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/leonardo-medeiros-4236a329/" class="wow fadeInUp" data-wow-delay=".3s"><i class="fab fa-linkedin-in"></i></a></li>
-						<li><a href="https://www.youtube.com/watch?v=-doWpIhVIJI&list=PLTL63qRr3gLyyMqhNPvCJ1i2CHc6QuQYt" class="wow fadeInUp" data-wow-delay=".4s"><i class="fab fa-youtube"></i></a></li>
-					</ul>
-
 					<p class="copyright">
-						© 2018 All Rights Reserved.
+						© 2020 All Rights Reserved.
 					</p>
-
 				</div>
 
 			</div><!-- .row -->
@@ -471,7 +561,7 @@
 	<!-- Scroll-up -->
 
 	<div class="scroll-up">
-		<a href="#home"><i class="fa fa-angle-double-up"></i></a>
+		<a href="#home"><span class="fa fa-angle-double-up"></span></a>
 	</div>
 
 	<!-- Javascript files -->
