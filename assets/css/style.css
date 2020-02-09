@@ -87,17 +87,11 @@ a,
 /* ---------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-	/*font: 700 40px/1.2 'Roboto Condensed', sans-serif;*/
-	/*color: #222;*/
-
 	font: 700 40px/1.2 'LemonMilk', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: #000;
-	
-	/* text-shadow: 1px 1px 7px #000000 */	
-
+	color: #222;
 }
 
 h2 {
@@ -425,9 +419,9 @@ textarea.form-control {
     align-self: center;
     padding: 5px 50px;
     margin-top: 30px;
-    color: white;
     background-color: #222;
-    color: white;
+	color: white;
+	width: 200px;
 }
 
 .resumeLink:hover, .resumeLink.active {
@@ -559,12 +553,9 @@ textarea.form-control {
 
 .hello,
 .who-creates {
-	/*font-family: Georgia, "Times New Roman", Times, serif;*/
 	font-family: "Tahoma", serif;
 	font-size: 16px;
-	/*font-style: italic;*/
 	text-transform: none;
-	/*text-shadow: 1px 1px #000000;*/
 	text-shadow: 1px 1px #3c82cb;
 	margin: 15px 0;
 }
@@ -781,7 +772,7 @@ figure {
 }
 
 .mfp-bg {
-	background: #000;
+	background: #222;
 	opacity: 0.97;
 	filter: alpha(opacity=97);
 }
@@ -1251,7 +1242,7 @@ figure {
 
 .sli-examples .item:hover {
 background: #f0f0f0;
-color: #000;
+color: #222;
 }
 .sli-examples .item {
 display: block;
