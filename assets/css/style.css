@@ -37,6 +37,12 @@ a:hover {
 	color: #999;
 }
 
+
+a:focus {
+	text-decoration: none;
+	color: #999;
+}
+
 i {
 	font-size: 40px;
 	color: white;
@@ -534,7 +540,10 @@ textarea.form-control {
 		 -o-background-size: cover;
 			background-size: cover;
 	padding: 0; */
-    background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1));
+
+    background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));
+
+/*    background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1));*/
 }
 
 .intro {
@@ -556,7 +565,7 @@ textarea.form-control {
 	font-family: "Tahoma", serif;
 	font-size: 16px;
 	text-transform: none;
-	text-shadow: 1px 1px #3c82cb;
+	/*text-shadow: 1px 1px #3c82cb;*/
 	margin: 15px 0;
 }
 
@@ -922,7 +931,8 @@ figure {
 	padding: 40px 0;
 	color: #FFF;
 	/* background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1)); */
-	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));
+/*	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
+	background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));
 }
 
 .copyright {
@@ -958,20 +968,25 @@ figure {
 	display: block;
 	line-height: 45px;
 	text-align: center;
-	border: 1px solid rgba(66, 134, 244, .8);
+	/*border: 1px solid rgba(66, 134, 244, .8);*/
+	border: 1px solid rgba(63, 63, 63, 1);
 	-webkit-border-radius: 30%;
 	   -moz-border-radius: 30%;
 			border-radius: 30%;
 	font-size: 30px;
-	color: rgba(66, 134, 244, .8);
+	/*color: rgba(66, 134, 244, .8);*/
+	color: rgba(63, 63, 63, 1);
 
 }
 
 .social-links a:hover {
 	/*border: 1px solid rgba(255, 255, 255, .5);*/
 	/*color: rgba(255, 255, 255, .5);*/
-	border: 1px solid rgba(66, 134, 244, .5);
-	color: rgba(66, 134, 244, .5);
+	/*border: 1px solid rgba(66, 134, 244, .5);*/
+	/*color: rgba(66, 134, 244, .5);*/
+
+	border: 1px solid rgba(63, 63, 63, .5);
+	color: rgba(63, 63, 63, .5);
 }
 
 /* ---------------------------------------------- /*
@@ -998,7 +1013,9 @@ figure {
 .navbar-custom .dropdown-menu {
 	/*background: #fff;*/
 	/* background: #7cacdc; */
-	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));
+/*	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
+
+	background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));
 	padding: 0;
 }
 
@@ -1007,7 +1024,12 @@ figure {
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
 	font-size: 11px;
 	letter-spacing: 3px;
-	color: #222;
+	/*color: #222;*/
+
+	/*text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);*/
+	/*color: #a0a8ab;*/
+    text-shadow: 0px 1px 1px rgb(63, 63, 63, 0.75);
+    color: rgba(255, 255, 255, 1);
 }
 
 .navbar-custom .nav li.active, .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus, .navbar-custom .navbar-nav > li.active a {
@@ -1016,7 +1038,9 @@ figure {
   color: #fff;
   outline: 0 none; */
 
-	background: rgba(84,132,180,0.5) none repeat scroll 0 0;
+	/*background: rgba(84,132,180,0.5) none repeat scroll 0 0;*/
+		background: rgba(180,180,180,0.2) none repeat scroll 0 0;
+
     color: #fff;
     outline: 0 none;
     /* background-image: linear-gradient(to right, rgba(84,132,180,0.5), rgba(84,132,180,1)); */
@@ -1062,12 +1086,14 @@ figure {
 
 .scroll-up a {
 	/*background-color: rgba(135, 135, 135, 0.5);*/
-	background-color: rgba(124, 172, 220, 0.5);
+	/*background-color: rgba(124, 172, 220, 0.5);*/
+	background-color: rgba(140, 140, 140, 0.5);
 	display: block;
 	width: 28px;
 	height: 28px;
 	text-align: center;
-	color: #3c82cb;
+	/*color: #3c82cb;*/
+	color: rgba(63, 63, 63, 0.5);
 	font-size: 14px;
 	line-height: 30px;
 }
@@ -1075,9 +1101,12 @@ figure {
 .scroll-up a:hover,
 .scroll-up a:active {
 	/*background-color: rgba(235, 235, 235, .8);*/
-	background-color: rgba(124, 172, 220, 0.8);
+	/*background-color: rgba(124, 172, 220, 0.8);*/
 	/*color: #222;*/
-	color: #3c82cb;
+	/*color: #3c82cb;*/
+
+	background-color: rgba(140, 140, 140, 1);
+	color: rgba(63, 63, 63, 1);
 }
 
 /* ---------------------------------------------- /*
@@ -1283,7 +1312,9 @@ font-size: 14px;
 #loading{
 	/*background-color: #d64700;*/
 	/*background-image: url(../images/background.png);*/
-	background-color: #7cacdc;
+/*	background-color: #7cacdc;*/
+
+	background-color: rgba(140, 140, 140, 0.8);
 	height: 100%;
 	width: 100%;
 	position: fixed;
