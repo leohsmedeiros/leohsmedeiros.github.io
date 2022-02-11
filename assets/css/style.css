@@ -530,6 +530,9 @@ textarea.form-control {
 
 #home {
 	/*background: url(../images/background.png);*/
+	background-image: url(../images/2920341.jpg);	
+	background-size: 100% 130%;
+
 	/*background-color: #222;*/
 	/* background-color: #7cacdc;
 	background-attachment: fixed;
@@ -541,9 +544,15 @@ textarea.form-control {
 			background-size: cover;
 	padding: 0; */
 
-    background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));
+/*    background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));*/
 
 /*    background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1));*/
+}
+
+@media screen and (max-width: 2000px) {
+  #home {
+		background-image: url(../images/2920342.jpg);	
+  }
 }
 
 .intro {
@@ -932,7 +941,8 @@ figure {
 	color: #FFF;
 	/* background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1)); */
 /*	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
-	background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));
+	/*background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));*/
+	background: url(../images/2920341.jpg);
 }
 
 .copyright {
@@ -1012,10 +1022,11 @@ figure {
 .navbar-custom,
 .navbar-custom .dropdown-menu {
 	/*background: #fff;*/
-	/* background: #7cacdc; */
-/*	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
+	/*background: #7cacdc;*/
+	/*background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
+	/*background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));*/
 
-	background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));
+	background: url(../images/2920341.jpg);
 	padding: 0;
 }
 
@@ -1069,7 +1080,9 @@ figure {
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-	background: #222;
+	/*background: #222;*/
+	background: white;
+
 }
 
 /* ---------------------------------------------- /*
@@ -1312,9 +1325,10 @@ font-size: 14px;
 #loading{
 	/*background-color: #d64700;*/
 	/*background-image: url(../images/background.png);*/
-/*	background-color: #7cacdc;*/
+	/*background-color: #7cacdc;*/
+	/*background-color: rgba(140, 140, 140, 0.8);*/
 
-	background-color: rgba(140, 140, 140, 0.8);
+	background: url(../images/2920341.jpg);
 	height: 100%;
 	width: 100%;
 	position: fixed;
