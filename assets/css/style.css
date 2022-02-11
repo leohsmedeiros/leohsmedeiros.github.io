@@ -97,7 +97,8 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: #222;
+	/*color: #222;*/
+	color: rgba(6,13,57,255);
 }
 
 h2 {
@@ -422,10 +423,11 @@ textarea.form-control {
 
 .resumeLink {
 	font-size: large;
-    align-self: center;
-    padding: 5px 50px;
-    margin-top: 30px;
-    background-color: #222;
+  align-self: center;
+  padding: 5px 50px;
+  margin-top: 30px;
+  /*background-color: #222;*/
+  background-color: rgba(6,13,57,255);
 	color: white;
 	width: 200px;
 }
@@ -683,7 +685,8 @@ textarea.form-control {
 
 #filter li:hover,
 #filter li.active {
-	background: #222;
+	background: rgba(6,13,57,255);
+	/*background: #222;*/
 	color: #fff;
 }
 
@@ -979,14 +982,16 @@ figure {
 	line-height: 45px;
 	text-align: center;
 	/*border: 1px solid rgba(66, 134, 244, .8);*/
-	border: 1px solid rgba(63, 63, 63, 1);
+	/*border: 1px solid rgba(63, 63, 63, 1);*/
+
+	border: 1px solid rgba(6,13,57,1);
 	-webkit-border-radius: 30%;
 	   -moz-border-radius: 30%;
 			border-radius: 30%;
 	font-size: 30px;
 	/*color: rgba(66, 134, 244, .8);*/
-	color: rgba(63, 63, 63, 1);
-
+	/*color: rgba(63, 63, 63, 1);*/
+	color: rgba(6,13,57,1);
 }
 
 .social-links a:hover {
@@ -995,8 +1000,11 @@ figure {
 	/*border: 1px solid rgba(66, 134, 244, .5);*/
 	/*color: rgba(66, 134, 244, .5);*/
 
-	border: 1px solid rgba(63, 63, 63, .5);
-	color: rgba(63, 63, 63, .5);
+	/*border: 1px solid rgba(63, 63, 63, .5);*/
+	/*color: rgba(63, 63, 63, .5);*/
+
+	border: 1px solid rgba(6,13,57,0.5);
+	color: rgba(6,13,57,0.5);
 }
 
 /* ---------------------------------------------- /*
@@ -1100,13 +1108,15 @@ figure {
 .scroll-up a {
 	/*background-color: rgba(135, 135, 135, 0.5);*/
 	/*background-color: rgba(124, 172, 220, 0.5);*/
-	background-color: rgba(140, 140, 140, 0.5);
+	/*background-color: rgba(140, 140, 140, 0.5);*/
+	background-color: rgba(6,13,57,0.5);
 	display: block;
 	width: 28px;
 	height: 28px;
 	text-align: center;
 	/*color: #3c82cb;*/
-	color: rgba(63, 63, 63, 0.5);
+	/*color: rgba(63, 63, 63, 0.5);*/
+	color: white;
 	font-size: 14px;
 	line-height: 30px;
 }
@@ -1118,8 +1128,10 @@ figure {
 	/*color: #222;*/
 	/*color: #3c82cb;*/
 
-	background-color: rgba(140, 140, 140, 1);
-	color: rgba(63, 63, 63, 1);
+	/*background-color: rgba(140, 140, 140, 1);*/
+	/*color: rgba(63, 63, 63, 1);*/
+	background-color: rgba(6,13,57,1);
+	color: white;
 }
 
 /* ---------------------------------------------- /*
