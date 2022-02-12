@@ -561,6 +561,8 @@ textarea.form-control {
 @media screen and (max-width: 2000px) {
   #home {
 		background-image: url(../images/2920342.jpg);	
+		background-size: 110% 110%;
+		background-position-x: 55%;
   }
 }
 
