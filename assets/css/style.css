@@ -52,6 +52,11 @@ i a {
 	display: block;
 }
 
+strong {
+	color: black;
+	font-style: italic;	
+}
+
 /* ---------------------------------------------- /*
  * Transition elsements
 /* ---------------------------------------------- */
@@ -93,7 +98,8 @@ a,
 /* ---------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-	font: 700 40px/1.2 'LemonMilk', sans-serif;
+	/*font: 700 40px/1.2 'LemonMilk', sans-serif;*/
+	font: 700 25px/1.2 'LemonMilk', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
@@ -430,6 +436,7 @@ textarea.form-control {
   background-color: rgba(6,13,57,255);
 	color: white;
 	width: 200px;
+	border-radius: 5px;
 }
 
 .resumeLink:hover, .resumeLink.active {
@@ -594,7 +601,7 @@ textarea.form-control {
 }
 
 .iconbox-icon {
-  color: #222;
+  color: rgba(6,13,57,1);
   font-size: 32px;
   line-height: 0;
   margin: 0 0 30px;
@@ -964,47 +971,23 @@ figure {
 }
 
 .social-links a {
-/*	width: 36px;
-	height: 36px;
-	display: block;
-	line-height: 35px;
-	text-align: center;
-	border: 1px solid rgba(255, 255, 255, .8);
-	-webkit-border-radius: 50%;
-	   -moz-border-radius: 50%;
-			border-radius: 50%;
-	font-size: 14px;
-	color: rgba(255, 255, 255, .8);*/
-
-	width: 45px;
-	height: 45px;
-	display: block;
-	line-height: 45px;
-	text-align: center;
-	/*border: 1px solid rgba(66, 134, 244, .8);*/
-	/*border: 1px solid rgba(63, 63, 63, 1);*/
-
-	border: 1px solid rgba(6,13,57,1);
-	-webkit-border-radius: 30%;
-	   -moz-border-radius: 30%;
-			border-radius: 30%;
-	font-size: 30px;
-	/*color: rgba(66, 134, 244, .8);*/
-	/*color: rgba(63, 63, 63, 1);*/
-	color: rgba(6,13,57,1);
+	width: 50px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  border: 1px solid rgba(6,13,57,1);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(6,13,57,1);
+  font-size: 25px;
 }
 
 .social-links a:hover {
-	/*border: 1px solid rgba(255, 255, 255, .5);*/
-	/*color: rgba(255, 255, 255, .5);*/
-	/*border: 1px solid rgba(66, 134, 244, .5);*/
-	/*color: rgba(66, 134, 244, .5);*/
-
-	/*border: 1px solid rgba(63, 63, 63, .5);*/
-	/*color: rgba(63, 63, 63, .5);*/
-
 	border: 1px solid rgba(6,13,57,0.5);
-	color: rgba(6,13,57,0.5);
+	color: gray;
 }
 
 /* ---------------------------------------------- /*
@@ -1280,7 +1263,7 @@ figure {
 @media (max-width: 480px) {
 
 	h1 {
-		font-size: 34px;
+		font-size: 24px;
 		letter-spacing: 3px;
 	}
 

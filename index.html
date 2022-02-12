@@ -9,14 +9,15 @@
 	<title>Leo Medeiros Developer</title>
 
 	<!-- CSS -->
+
 	<!-- Bootstrap core CSS -->
 	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-	<!-- Font Awesome CSS -->
-	<!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen"> -->
-	
-	<!-- Font Awesome CSS v5.5.0 -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<!-- Font Awesome CSS v6.0.0 -->
+	<link href="assets/fontawesome-free-6.0.0-web/css/all.min.css" rel="stylesheet" media="screen">
+
+	<!-- Devicons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
 
 	<!-- Elegant icons CSS -->
 	<link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
@@ -61,7 +62,8 @@
 
 
 		<div class="intro">
-			<div class="hello">Hello, my name is Leonardo Medeiros and</div>
+			<!-- <div class="hello">Hello, my name is Leonardo Medeiros and</div> -->
+			<div class="hello">Hi and welcome to my website,</div>
 			<h1>I am Game/Mobile Developer</h1>
 			<!-- <div class="who-creates">creating modern games and mobile apps.</div> -->
 		</div>
@@ -92,17 +94,17 @@
 					</button>
 
 					<a href="#home">
-						<img src="assets/images/logo_cortada.png" style="height: 45px;">
+						<img src="assets/images/logo_cortada.png" style="height: 45px; margin: 5px;">
 					</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#whoiam">Who I am</a></li>
-						<li><a href="#services">What I do</a></li>
+						<li><a href="#whoiam">Leonardo Medeiros</a></li>
+						<!-- <li><a href="#services">What I do</a></li> -->
 						<li><a href="#portfolio">Projects</a></li>
 						<!-- <li><a href="#testimonial">Testimonial</a></li> -->
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#contact">Contacts</a></li>
 					</ul>
 				</div>
 
@@ -124,7 +126,7 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">Who I am</h2>
+						<h2 class="module-title">Leonardo Medeiros</h2>
 						<div class="module-line"></div>
 					</div>
 
@@ -133,8 +135,16 @@
 			</div>
 
 			<div class="row">
+				<div class="iconbox-icon">
+					<span class="devicon-android-plain"></span>
+					<span class="devicon-apple-original"></span>
+					<span class="devicon-unity-original"></span>
+					<span class="devicon-firebase-plain"></span>
+					<span class="devicon-flutter-plain"></span>
+				</div>
+
 				<div class="module-subtitle">
-					An experienced Mobile Developer with a demonstrated history of working in the software industry since 2011.<br>
+					An experienced <strong class="module-title">Mobile and Game Developer</strong> with a demonstrated history of working in the software industry since 2011.<br>
 					Skilled in development of hybrid and native mobile applications and game programming with Unity3D.<br>
 					Strong engineering professional graduated in Computer Science with emphasis on Computational Mathematics at PUC-GO.
 				</div>
@@ -143,61 +153,17 @@
 					<img class="profilePhoto" src="assets/images/profile.jpg">
 					<a class="resumeLink" href="https://docs.google.com/document/d/1QfSCZgCkuRn36gNKhTM83z2LXjjE-h3SbtTm4YjTAfo/edit?usp=sharing" target="_blank">Resume</a>
 				</div>
+			</div>
+
+
 		</div><!-- .container -->
 	</section>
 
 	<!-- Who am I end -->
 
-	<!-- Services start -->
-
-	<section id="services" class="module module-gray">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">What I do</h2>
-						<div class="module-line"></div>
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="row">
-
-				<div class="col-sm-6">
-					<div class="iconbox wow bounceIn">
-						<div class="iconbox-icon">
-							<p class="fas fa-gamepad"></p>
-						</div>
-						<div class="iconbox-text" >
-							<h3 class="iconbox-title">Game Development</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="iconbox wow bounceIn">
-						<div class="iconbox-icon">
-							<p class="fas fa-mobile-alt"></p>
-						</div>
-						<div class="iconbox-text" >
-							<h3 class="iconbox-title">Mobile Development</h3>
-						</div>
-					</div>
-				</div>
-
-
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</section>
-
-	<!-- Services end -->
-
 	<!-- Portfolio start -->
 
-	<section id="portfolio" class="module">
+	<section id="portfolio" class="module module-gray">
 		<div class="container">
 			<div class="row">
 
@@ -704,54 +670,6 @@
 
 	<!-- Portfolio end -->
 
-	<!-- Twitter start -->
-
-<!-- 	<div id="testimonial" class="module module-gray text-center">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-8 col-sm-offset-2">
-
-					<div class="module-header wow fadeInUp">
-						<div class="module-icon"><span class="icon-speech"></span></div>
-					</div>
-
-					<div class="testimonials owl-carousel wow fadeInUp">
-						<div class="single-testimonials">
-							<p>"Leonardo is a very good and very flexible game developer. During his time at Gameblox he participated in numerous projects, from web games to motion games (Kinect/Leap motion), and he always managed to deliver. He shows great commitment to making every project a success and we wish him good luck on his next endeavor!"</p>
-							<br><br><br>
-							<span>Diego Santos Leão, CEO at GameBlox Interactive</span>
-						</div>
-						<div class="single-testimonials">
-							<p>"Leonardo is an excellent software developer with extensive knowledge of design patterns and programming skills. He has the ability to learn new methodologies and technologies."</p>
-							<br><br><br>
-							<span>Pedro Bacchini, Java Back-end Developer at Irvem</span>
-						</div>
-						<div class="single-testimonials">
-							<p>"Um jovem profissional com muitas qualidades. Sua expertise em resolver problemas é surpreendente!"</p>
-							<br><br><br>
-							<span>Ítalo Sangar, iOS Developer at Zup</span>
-						</div>
-						<div class="single-testimonials">
-							<p>"Trabalhei com o Leonardo por cerca de um ano e posso afirmar que ele é um profissional atencioso, independente de ferramentas/plataformas e que procura sempre produzir soluções boas sendo assim muito versátil."</p>
-							<br><br><br>
-							<span>Christian Coimbra, Mobile Developer at BacklotCars</span>
-						</div>
-						<div class="single-testimonials">
-							<p>"Grande profissional, desempenhado em produtividade e propor solução alternativas que resultam em concluir os fatos questionados em grupo."</p>
-							<br><br><br>
-							<span>Wender Barcelos, CEO at WPLabs</span>
-						</div>
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</div> -->
-
-	<!-- Twitter end -->
-
 	<!-- Contact start -->
 
 	<section id="contact" class="module">
@@ -761,7 +679,7 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="module-header">
-						<h2 class="module-title">Contact</h2>
+						<h2 class="module-title">Contacts</h2>
 						<div class="module-line"></div>
 						<div class="module-subtitle">
 							Do you have any idea you would like to discuss about? Please, get in touch.
