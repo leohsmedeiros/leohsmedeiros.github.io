@@ -558,7 +558,7 @@ textarea.form-control {
 /*    background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1));*/
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 991px) {
   #home {
 		background-image: url(../images/2920342.jpg);	
 		background-size: 110% 110%;
