@@ -539,7 +539,7 @@ textarea.form-control {
 
 #home {
 	/*background: url(../images/background.png);*/
-	background-image: url(../images/2920341.jpg);	
+	background-image: url(../images/istockphoto-1148635445-170667a.webp);	
 	background-size: 100% 130%;
 
 	/*background-color: #222;*/
@@ -560,7 +560,7 @@ textarea.form-control {
 
 @media screen and (max-width: 991px) {
   #home {
-		background-image: url(../images/2920342.jpg);	
+		background-image: url(../images/istockphoto-1148635445-170667a.webp);	
 		background-size: 110% 110%;
 		background-position-x: 55%;
   }
@@ -606,7 +606,11 @@ textarea.form-control {
   color: rgba(6,13,57,1);
   font-size: 32px;
   line-height: 0;
-  margin: 0 0 30px;
+/*  margin: 0 0 30px;*/
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .iconbox-title {
@@ -734,7 +738,15 @@ figure {
   margin: 0;
   overflow: hidden;
   position: relative;
+	width: 100%;
 }
+
+figure img {
+	object-fit: contain;
+	min-height: 200px;
+	max-height: 300px;
+}
+
 .portfolio-items-container .portfolio-item figcaption {
   background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
   bottom: 8px;
@@ -761,6 +773,41 @@ figure {
 	z-index: 1000;
 }
 
+.portfolio-items-container-link {
+	display: flex;
+	justify-content: center;
+}
+
+.portfolio-items-container-link .child {
+	flex: 1; /* Distributes available space equally */
+	color: white;
+	padding: 10px;
+	margin: 0px 20px;
+	width:100%;
+	overflow:auto;
+	position: relative;
+	font-size: 30px;
+}
+
+.portfolio-items-container-link .child a {
+	width: 100%;
+	height: 100%;
+	position: absolute; /* Allows the child to fill the parent */
+	top: 0;
+	left: 0;
+}
+
+.portfolio-item-background {
+	background: url(../images/istockphoto-1148635445-170667a.webp);
+	border-radius: 8px;
+	padding: 5px;
+
+}
+
+.portfolio-item-background h2 {
+	color: white;
+}
+
 .portfolio-items-container .caption-inner {
 	position: absolute;
 	left: 0;
@@ -769,7 +816,7 @@ figure {
 	margin-top: -20px;
 }
 
-.caption-inner .portfolio-item-title {
+.caption-inner {
   color: #fff;
   font-size: 16px;
   font-weight: 400;
@@ -954,7 +1001,7 @@ figure {
 	/* background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,1)); */
 /*	background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
 	/*background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));*/
-	background: url(../images/2920341.jpg);
+	background: url(../images/istockphoto-1148635445-170667a.webp);
 }
 
 .copyright {
@@ -1019,7 +1066,7 @@ figure {
 	/*background-image: linear-gradient(to right, rgba(84,132,180,1), rgba(124,172,220,0.8));*/
 	/*background-image: linear-gradient(to right, rgba(140,140,140,1), rgba(63,63,63,1));*/
 
-	background: url(../images/2920341.jpg);
+	background: url(../images/istockphoto-1148635445-170667a.webp);
 	padding: 0;
 }
 
@@ -1325,7 +1372,7 @@ font-size: 14px;
 	/*background-color: #7cacdc;*/
 	/*background-color: rgba(140, 140, 140, 0.8);*/
 
-	background: url(../images/2920341.jpg);
+	background: url(../images/istockphoto-1148635445-170667a.webp);
 	height: 100%;
 	width: 100%;
 	position: fixed;
