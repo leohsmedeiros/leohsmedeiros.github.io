@@ -769,15 +769,15 @@ figure img {
 
 .portfolio-items-container-link .child {
 	color: white;
-	padding: 10px;
+	padding: 5px;
 	overflow:auto;
 	position: relative;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 .portfolio-items-container-link .child p {
 	margin: 0px;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: normal;
 }
 
@@ -802,6 +802,7 @@ figure img {
 .portfolio-item-background h3 {
 	color: white;
 	margin-bottom: 30px;
+	font-family: 'Tahoma';
 }
 
 .portfolio-item-title {
