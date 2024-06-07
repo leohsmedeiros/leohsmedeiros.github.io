@@ -588,7 +588,7 @@ textarea.form-control {
   line-height: 0;
 	display:flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: left;
 	align-items: center;
 	width: 100%;
 	word-wrap: break-word;
@@ -706,8 +706,8 @@ textarea.form-control {
   margin-bottom: 20px;
   overflow: hidden;
   padding: 0 10px;
-  width: 33.333%;
 }
+
 .portfolio-items-container .portfolio-item img {
 	display: block;
 	width: 100%;
@@ -715,12 +715,14 @@ textarea.form-control {
 }
 
 .portfolio-items-container .portfolio-item {
--webkit-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
--moz-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
--ms-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
--o-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	-webkit-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	-moz-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	-ms-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	-o-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	width: 33.3%;
 }
+
 figure {
   margin: 0;
   overflow: hidden;
@@ -770,7 +772,7 @@ figure img {
 	padding: 10px;
 	overflow:auto;
 	position: relative;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 .portfolio-items-container-link .child p {
@@ -795,19 +797,30 @@ figure img {
 	background: url(../images/black_background.webp);
 	border-radius: 8px;
 	padding: 5px;
-
 }
 
-.portfolio-item-background h2 {
+.portfolio-item-background h3 {
+	color: white;
+	margin-bottom: 30px;
+}
+
+.portfolio-item-title {
 	color: white;
 }
 
+.portfolio-item-title p {
+	color: white;
+	font-size: 15px;
+}
+
 .portfolio-items-container .caption-inner {
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 100%;
-	margin-top: -20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .caption-inner {
@@ -821,6 +834,37 @@ figure img {
   font-family: "LemonMilk", serif;
   font-size: 13px;
   font-style: italic;
+}
+
+.caption-inner ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px;
+}
+
+.caption-inner li {
+/*	display: inline-block;*/
+	margin: 5px;
+}
+
+.caption-inner a {
+	width: 50px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,1);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(0,0,0,1);
+  font-size: 25px;
+}
+
+.caption-inner a:hover {
+	border: 1px solid rgba(0,0,0,0.5);
+	color: gray;
 }
 
 .portfolio-items-container .portfolio-item:hover figcaption {
