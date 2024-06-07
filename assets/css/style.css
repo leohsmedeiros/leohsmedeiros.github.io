@@ -795,8 +795,8 @@ figure img {
 
 .portfolio-item-background {
 	background: url(../images/black_background.webp);
-	border-radius: 8px;
-	padding: 5px;
+	border-radius: 5px;
+	padding: 1px;
 }
 
 .portfolio-item-background h3 {
