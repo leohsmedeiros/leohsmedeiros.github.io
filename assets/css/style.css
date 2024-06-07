@@ -802,6 +802,7 @@ figure img {
 .portfolio-item-background h3 {
 	color: white;
 	margin-bottom: 30px;
+	font-size: 15px;
 	font-family: 'Tahoma';
 }
 
@@ -811,7 +812,13 @@ figure img {
 
 .portfolio-item-title p {
 	color: white;
-	font-size: 15px;
+	font-size: 13px;
+	font-style: italic;
+}
+
+.portfolio-item-title p:hover {
+	cursor: pointer;
+	color: grey;
 }
 
 .portfolio-items-container .caption-inner {
