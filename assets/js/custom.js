@@ -19,6 +19,7 @@
 	$(window).load(function() {
 		$('#loading').fadeOut();
 		$('#loading').delay(350).fadeOut('slow');
+		$('#filter li[data-group="all"]').trigger('click');
 	});
 
 		/* ---------------------------------------------- /*
