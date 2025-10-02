@@ -107,6 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const jsonDataArray = [
     {
+        "title": "OneFootball",
+        "imageSrc": "assets/images/onefootball.webp",
+        "dataGroups": ["all", "available", "ios", "android", "hybrid"],
+        "links": [
+            {
+                "name": "Google Play",
+                "url": "https://play.google.com/store/apps/details?id=de.motain.iliga"
+            },
+            {
+                "name": "App Store",
+                "url": "https://apps.apple.com/br/app/onefootball-resultados-futebol/id382002079"
+            }
+        ]
+    },
+    {
         "title": "Openlane Buyer",
         "imageSrc": "assets/images/openlane_buyer.png",
         "dataGroups": ["all", "available", "ios"],
