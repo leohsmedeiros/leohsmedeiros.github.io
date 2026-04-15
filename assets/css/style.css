@@ -432,7 +432,6 @@ textarea.form-control {
 }
 
 .module {
-	padding: 60px 0 60px;
 	text-align: center;
 }
 
@@ -472,10 +471,15 @@ textarea.form-control {
 	z-index: 1;
 }
 
-.module-title {
-    color: #e5efff;
-    font-size: 70px;
-    text-transform: capitalize;
+.moduleTitle {
+	color: #FAFAFA;
+	font-size: 96px;
+	line-height: 1;
+}
+
+.jobTitle {
+	color: #4270ef;
+	letter-spacing: .3em;
 }
 
 #whoiam {
