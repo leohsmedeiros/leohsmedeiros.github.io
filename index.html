@@ -48,78 +48,42 @@
 
 </head>
 <body>
-
-	<!-- Preloader -->
-
-	<div id="loading">
-		<div id="loading-center">
-			<div id="loading-center-absolute">
-				<div class="object" id="object_one"></div>
-				<div class="object" id="object_two"></div>
-				<div class="object" id="object_three"></div>
-				<div class="object" id="object_four"></div>
-			</div>
-		</div>
-	</div>
-
 	<!-- Navigation start -->
 
 	<header class="header">
-
 		<nav class="navbar navbar-custom">
-
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+			<div class="containerWithGrid">
+				<div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+					<a href="#" class="logo-text">LM<span class="text-accent">.</span></a>
+					<div class="flex items-center gap-8">
+						<a href="#portfolio">Portfolio</a>
+						<a href="#whoiam">Who I am</a>
+						<a href="#contact">Contact</a>
+					</div>
 				</div>
-
-				<div class="collapse navbar-collapse" id="custom-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#portfolio">Portfolio</a></li>
-						<li><a href="#whoiam">Who I am</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
-
 			</div><!-- .container -->
-
 		</nav>
-
 	</header>
 
 	<!-- Navigation end -->
 
 	<!-- Portfolio start -->
-	<section class="module">
-		<div class="containerWithGrid">
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-					<p class="jobTitle">SENIOR MOBILE ENGINEER</h2>
-					<p class="moduleTitle">Leonardo</br>Medeiros</p>
-				</div>
-
+	<section class="containerWithGrid relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+		<div class="container">
+			<p class="job-title">SENIOR MOBILE ENGINEER</h2>
+			<p class="name-title">Leonardo</br>Medeiros</p>
+			<div class="module-subtitle">
+				Building mobile experiences with native and hybrid technologies for over 15 years.</br>Flutter · Swift · Kotlin · Unity
 			</div>
-
+		</div>
+		<!-- <div class="containerWithGrid">
 			<div class="row">
-				<div class="containerProfile">
-					<img class="profilePhoto" src="assets/images/profile.png">
-				</div>
-				<div class="module-subtitle" style="margin-top: 20px; text-align: start;">
-					A T-shaped <strong class="module-title">Senior Mobile Engineer</strong> with a background in Computer Science, boasting over a decade of industry expertise. Specialized in Swift and iOS development, but with knowledge in Kotlin and Java for Android, cross-platform mobile applications with Flutter and game development with Unity3D.<br><br>
-
-					Notable projects including a proprietary GPS tracking optimization library, a framework to translate Portuguese to LIBRAS using Kinect and a successful app development for a real estate product using iPhone LiDAR technology to map a building and creating a 3D space to navigate through it.<br><br>
-
-					Developed independent games achieving over 400,000 downloads, showcasing technical skills and creativity in software development.<br><br>
-
-					Accessibility implementation experience on apps serving over 10 million users, demonstrating a commitment to inclusive design.<br><br>
-
-					Proven ability to deliver cutting-edge mobile applications, emphasizing feature development, seamless functionality across devices, and rigorous code quality standards. Skilled in team collaboration, writing comprehensive tests, and ensuring high-performance, user-friendly applications. Dedicated to driving innovation and excellence in mobile technology.
+				<div class="col-sm-6 col-sm-offset-3">
+					<p class="job-title">SENIOR MOBILE ENGINEER</h2>
+					<p class="name-title">Leonardo</br>Medeiros</p>
+					<div class="module-subtitle">
+						Criando experiências mobile nativas e jogos há mais de 10 anos.</br>Flutter · Swift · Kotlin · Unity
+					</div>
 				</div>
 			</div>
 
@@ -133,10 +97,10 @@
 					<span class="devicon-kotlin-plain"> <h5>Kotlin</h5> </span>
 				</div>
 			</div>
-		</div><!-- .container -->
+		</div>.container -->
 	</section>
 
-	<section id="portfolio" class="module">
+	<section id="portfolio" class="module py-32 px-6">
 		<div class="container">
 			<div class="row">
 
@@ -183,7 +147,7 @@
 
 	<!-- Who am I start -->
 
-	<section id="whoiam" class="module">
+	<section id="whoiam" class="module py-32 px-6">
 		<div class="container">
 			<div class="row">
 
@@ -233,7 +197,7 @@
 
 	<!-- Contact start -->
 
-	<section id="contact" class="module">
+	<section id="contact" class="module py-32 px-6">
 		<div class="container">
 			<div class="row">
 
