@@ -12,6 +12,7 @@ body {
 	font: 400 12px/1.8 'Inter', sans-serif;
 	color: #666;
 	overflow-x: hidden;
+	background-color: #0d0d0d;
 }
 
 img {
@@ -435,18 +436,14 @@ textarea.form-control {
 	text-align: center;
 }
 
-.module-gray {
-	background: #f5f5f5;
-}
-
-#whoiam {
+.containerWithGrid {
 	position: relative;
 	overflow: hidden;
+	text-align: center;
 	background-color: #0d0d0d;
-	color: #e5efff;
 }
 
-#whoiam::before {
+.containerWithGrid::before {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -458,7 +455,7 @@ textarea.form-control {
 	opacity: 1;
 }
 
-#whoiam::after {
+.containerWithGrid::after {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -468,6 +465,21 @@ textarea.form-control {
 		linear-gradient(90deg, #141414 1px, transparent 1px);
 	background-size: 53px 53px;
 	opacity: 1;
+}
+
+.containerWithGrid > * {
+	position: relative;
+	z-index: 1;
+}
+
+.module-title {
+    color: #e5efff;
+    font-size: 70px;
+    text-transform: capitalize;
+}
+
+#whoiam {
+	color: #e5efff;
 }
 
 #whoiam .container {
@@ -1136,7 +1148,6 @@ figure img {
 /* ---------------------------------------------- */
 
 .header {
-	border-bottom: 1px solid #f5f5f5;
 	position: relative;
 	width: 100%;
 	z-index: 998;
@@ -1153,7 +1164,6 @@ figure img {
 
 .navbar-custom,
 .navbar-custom .dropdown-menu {
-	background: url(../images/black_background.webp);
 	padding: 0;
 }
 
