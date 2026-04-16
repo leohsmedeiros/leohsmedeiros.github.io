@@ -1420,3 +1420,20 @@ figure img {
     font-size: 14px;
     line-height: 20px;
 }
+
+.backdrop-blur-xl {
+    --tw-backdrop-blur: 24px;
+    backdrop-filter: 24px;
+}
+
+.bg-background\/80 {
+    background-color: #0a0a0aee;
+}
+
+.border-border\/50 {
+    border-color: #24242480;
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
