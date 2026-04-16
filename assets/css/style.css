@@ -15,7 +15,7 @@ img {
 }
 
 a {
-    color: white;
+    color: #8c8c8c;
 }
 
 a:hover,
@@ -514,6 +514,7 @@ textarea.form-control {
 	color: #8c8c8c;
 	max-width: 800px;
 	margin: auto;
+	margin-bottom: 3rem;
 }
 
 .module-line {
@@ -521,44 +522,6 @@ textarea.form-control {
 	width: 55px;
 	height: 1px;
 	margin: 30px auto;
-}
-
-/* ---------------------------------------------- /*
- * Home
-/* ---------------------------------------------- */
-
-#home {
-	background-image: url(../images/black_background.webp);	
-	background-size: 100% 130%;
-}
-
-@media screen and (max-width: 991px) {
-  #home {
-		background-image: url(../images/black_background.webp);	
-		background-size: 110% 110%;
-		background-position-x: 55%;
-  }
-}
-
-.intro {
-	position: absolute;
-	width: 100%;
-	top: 50%;
-	left: 0;
-	text-align: center;
-	-webkit-transform: translate(0%, -50%);
-	   -moz-transform: translate(0%, -50%);
-		-ms-transform: translate(0%, -50%);
-		 -o-transform: translate(0%, -50%);
-			transform: translate(0%, -50%);
-	padding: 0 15px;
-}
-
-.hello,
-.who-creates {
-	font-size: 16px;
-	text-transform: none;
-	margin: 15px 0;
 }
 
 /* ---------------------------------------------- /*
@@ -1345,6 +1308,14 @@ figure img {
     gap: 2rem;
 }
 
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-2 {
+    gap: .5rem;
+}
+
 .relative {
     position: relative;
 }
@@ -1370,7 +1341,7 @@ figure img {
 }
 
 .h-16 {
-    height: 4rem;
+    height: 5.4rem;
 }
 
 .mx-auto {
@@ -1410,4 +1381,19 @@ figure img {
 
 .fixed {
     position: fixed;
+}
+
+.animate-fade-up {
+    animation: fade-up .8s ease-out forwards;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
