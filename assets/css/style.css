@@ -436,10 +436,6 @@ h6 {
     animation: fade-up .8s ease-out forwards;
 }
 
-.animate-slide-up {
-    animation: fade-up .8s ease-out forwards;
-}
-
 .opacity-0 {
     opacity: 0;
 }
