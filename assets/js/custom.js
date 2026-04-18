@@ -30,27 +30,5 @@
 		});
 
 		updateNavbarScrollState();
-
-		/* ---------------------------------------------- /*
-		 * Initialize shuffle plugin
-		/* ---------------------------------------------- */
-
-		var $portfolioContainer = $('.portfolio-items-container');
-
-		$('#filter li').on('click', function (e) {
-			e.preventDefault();
-
-			$('#filter li').removeClass('active');
-			$(this).addClass('active');
-
-			group = $(this).attr('data-group');
-			var groupName = $(this).attr('data-group');
-
-			$portfolioContainer.shuffle('shuffle', groupName );
-		});
 		
-		$('.simple-ajax-popup').magnificPopup({
-		  type: 'image',
-		  gallery:{enabled:true}
-		});		
 })(jQuery);

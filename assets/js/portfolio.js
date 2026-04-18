@@ -1,137 +1,300 @@
 // portfolio.js
-function createPortfolioItem(json) {
-    const li = document.createElement('li');
-    li.className = 'portfolio-item';
-    li.setAttribute('data-groups', json.dataGroups.join(' '));
 
-    const figure = document.createElement('figure');
-    figure.className = 'portfolio-item-background';
+// Color palette for project accent bars
+const projectColors = [
+    'rgb(66, 135, 245)',  // Blue
+    'rgb(249, 116, 21)',  // Orange
+    'rgb(34, 195, 93)',   // Green
+    'rgb(26, 128, 230)',  // Light Blue
+    'rgb(226, 54, 112)',  // Pink
+    'rgb(140, 71, 209)',  // Purple
+    'rgb(242, 185, 13)',  // Yellow
+    'rgb(153, 51, 204)',  // Violet
+];
 
-    const img = document.createElement('img');
-    img.src = json.imageSrc;
-    img.alt = '';
+// Map data groups to technology tags
+const techMap = {
+    "ios": "Swift",
+    "android": "Kotlin",
+    "hybrid": "Flutter",
+    "games": "Unity",
+    "personal": "Personal"
+};
 
-    const divContainerLink = document.createElement('div');
-    divContainerLink.className = 'portfolio-items-container-link';
+let colorIndex = 0;
 
-    const divIconbox = document.createElement('div');
-    divIconbox.className = 'iconbox-icon';
+function getNextColor() {
+    const color = projectColors[colorIndex % projectColors.length];
+    colorIndex++;
+    return color;
+}
 
-    // Mapping dataGroups to icon classes
-    const iconMap = {
-        "available": "fa-solid fa-store",
-        "ios": "devicon-apple-plain",
-        "android": "devicon-android-plain",
-        "personal": "fa-solid fa-circle-user",
-        "games": "devicon-unity-original",
-        "hybrid": "devicon-flutter-plain"
-    };
+function createPortfolioItem(json, index) {
+    const div = document.createElement('div');
+    div.className = 'group relative bg-card border border-border/50 rounded-xl overflow-hidden transition-all duration-500 hover:border-border';
+    div.setAttribute('data-groups', json.dataGroups.join(' '));
 
+    const color = getNextColor();
+
+    // Build tech tags from dataGroups
+    const techTags = [];
     json.dataGroups.forEach(group => {
-        if (iconMap[group]) {
-            const divChildIcon = document.createElement('div');
-            divChildIcon.className = 'child';
-
-            const spanIcon = document.createElement('span');
-            spanIcon.className = iconMap[group];
-
-            divChildIcon.appendChild(spanIcon);
-            divIconbox.appendChild(divChildIcon);
+        if (techMap[group] && !techTags.includes(techMap[group])) {
+            techTags.push(techMap[group]);
         }
     });
 
-    const divSpacer = document.createElement('div');
-    divSpacer.className = 'spacer';
+    // Build links HTML
+    let linksHtml = '';
+    if (json.links && json.links.length > 0) {
+        json.links.forEach(link => {
+            const linkText = link.name.toLowerCase().includes('app store') ? 'App Store' : 
+                             link.name.toLowerCase().includes('google play') ? 'Google Play' : 
+                             link.name;
+            linksHtml += `
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-accent transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>${linkText}
+                </a>
+            `;
+        });
+    }
 
-    const divChildText = document.createElement('div');
-    divChildText.className = 'child';
+    // Build tech tags HTML
+    let tagsHtml = '';
+    if (techTags.length > 0) {
+        tagsHtml = '<div class="flex flex-wrap gap-2 mb-4">';
+        techTags.forEach(tech => {
+            tagsHtml += `<span class="text-xs px-2.5 py-1 rounded-full bg-secondary text-muted-foreground border border-border/50">${tech}</span>`;
+        });
+        tagsHtml += '</div>';
+    }
 
-    const pText = document.createElement('p');
-    pText.textContent = json.title;
+    div.innerHTML = `
+        <div class="h-1 w-full transition-all duration-500 group-hover:h-1.5" style="background: ${color};"></div>
+        <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+                <h3 class="font-display font-bold text-lg text-foreground group-hover:text-accent transition-colors duration-300">${json.title}</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone w-6 h-6 text-muted-foreground/50">
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                    <path d="M12 18h.01"></path>
+                </svg>
+            </div>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-4">${json.description || ''}</p>
+            ${tagsHtml}
+            ${linksHtml ? `<div class="flex gap-6 pt-2 border-t border-border/30">${linksHtml}</div>` : ''}
+        </div>
+    `;
 
-    divChildText.appendChild(pText);
-
-    divIconbox.appendChild(divSpacer);
-    divIconbox.appendChild(divChildText);
-
-    divContainerLink.appendChild(divIconbox);
-
-    const figcaption = document.createElement('figcaption');
-    const divCaptionInner = document.createElement('div');
-    divCaptionInner.className = 'caption-inner';
-
-    const ul = document.createElement('ul');
-
-    const liTitle = document.createElement('li');
-    liTitle.className = 'portfolio-item-title';
-
-    const h3 = document.createElement('h3');
-    h3.textContent = json.title;
-
-    liTitle.appendChild(h3);
-    ul.appendChild(liTitle);
-
-    json.links.forEach(link => {
-        const liLink = document.createElement('li');
-        liLink.className = 'portfolio-item-title';
-        liLink.onclick = function() { location.href = link.url };
-
-        const pLink = document.createElement('p');
-        const uLink = document.createElement('u');
-        uLink.textContent = link.name;
-
-        pLink.appendChild(uLink);
-        liLink.appendChild(pLink);
-        ul.appendChild(liLink);
-    });
-
-    divCaptionInner.appendChild(ul);
-    figcaption.appendChild(divCaptionInner);
-
-    figure.appendChild(img);
-    figure.appendChild(divContainerLink);
-    figure.appendChild(figcaption);
-
-    li.appendChild(figure);
-
-    return li;
+    return div;
 }
 
-// This function will be called after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    jsonDataArray.forEach(jsonData => {
-        const portfolioItem = createPortfolioItem(jsonData);
-        document.getElementById('portfolio-list').appendChild(portfolioItem);
+// Filter functionality
+function initPortfolioFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioGrid = document.getElementById('portfolio-grid');
+    const items = portfolioGrid.querySelectorAll('[data-groups]');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active button
+            filterButtons.forEach(b => {
+                b.classList.remove('bg-foreground', 'text-background', 'border-foreground');
+                b.classList.add('bg-transparent', 'text-muted-foreground', 'border-border/50');
+            });
+            this.classList.remove('bg-transparent', 'text-muted-foreground', 'border-border/50');
+            this.classList.add('bg-foreground', 'text-background', 'border-foreground');
+
+            const group = this.getAttribute('data-group');
+
+            items.forEach(item => {
+                const groups = item.getAttribute('data-groups').split(' ');
+                if (group === 'all' || groups.includes(group)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
     });
-});
+}
+
 
 const jsonDataArray = [
     {
         "title": "OneFootball",
-        "imageSrc": "assets/images/onefootball.webp",
-        "dataGroups": ["all", "available", "ios", "android", "hybrid"],
+        "description": "App de resultados de futebol e estatísticas em tempo real.",
+        "dataGroups": ["all", "ios", "android", "hybrid"],
         "links": [
-            {
-                "name": "Google Play",
-                "url": "https://play.google.com/store/apps/details?id=de.motain.iliga"
-            },
-            {
-                "name": "App Store",
-                "url": "https://apps.apple.com/br/app/onefootball-resultados-futebol/id382002079"
-            }
+            { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=de.motain.iliga" },
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/onefootball-resultados-futebol/id382002079" }
         ]
     },
     {
         "title": "Openlane Buyer",
-        "imageSrc": "assets/images/openlane_buyer.png",
-        "dataGroups": ["all", "available", "ios"],
+        "description": "App para compradores de veículos em leilões online.",
+        "dataGroups": ["all", "ios"],
         "links": [
-            {
-                "name": "App Store",
-                "url": "https://apps.apple.com/us/app/openlane-buyer/id1175036411"
-            }
+            { "name": "App Store", "url": "https://apps.apple.com/us/app/openlane-buyer/id1175036411" }
         ]
     },
+    {
+        "title": "Openlane Uploader",
+        "description": "App para vendedores de veículos em leilões online.",
+        "dataGroups": ["all", "ios"],
+        "links": [
+            { "name": "App Store", "url": "https://apps.apple.com/us/app/openlane-uploader/id1186571028" }
+        ]
+    },
+    {
+        "title": "Peek Mobile",
+        "description": "App de reservas e experiências de viagem.",
+        "dataGroups": ["all", "ios"],
+        "links": [
+            { "name": "App Store", "url": "https://apps.apple.com/in/app/peek-mobile/id1469535539" }
+        ]
+    },
+    {
+        "title": "Itaú cartões",
+        "description": "App de gestão de cartões de crédito Itaú.",
+        "dataGroups": ["all", "ios"],
+        "links": [
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/ita%C3%BA-cart%C3%B5es-de-cr%C3%A9dito/id394401915" }
+        ]
+    },
+    {
+        "title": "ShimmerFX",
+        "description": "Biblioteca open source para efeitos de shimmer no iOS.",
+        "dataGroups": ["all", "personal", "ios"],
+        "links": [
+            { "name": "GitHub", "url": "https://github.com/leohsmedeiros/ShimmerFX" }
+        ]
+    },
+    {
+        "title": "My Mixtapez",
+        "description": "App para descobrir e ouvir música rap e hip hop.",
+        "dataGroups": ["all", "ios"],
+        "links": [
+            { "name": "App Store", "url": "https://apps.apple.com/us/app/my-mixtapez-rap-hip-hop/id525781368" }
+        ]
+    },
+    {
+        "title": "Bird Id",
+        "description": "App de identificação de pássaros por áudio.",
+        "dataGroups": ["all", "hybrid"],
+        "links": [
+            { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=br.com.vaultid.apps.authenticator" },
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/birdid/id1450002184?l=en" }
+        ]
+    },
+    {
+        "title": "Crabki",
+        "description": "App de delivery de comida.",
+        "dataGroups": ["all", "hybrid"],
+        "links": [
+            { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.crabki" },
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/crabki/id1537477957?l=en" }
+        ]
+    },
+    {
+        "title": "Konviva",
+        "description": "Plataforma de educação corporativa.",
+        "dataGroups": ["all", "hybrid"],
+        "links": [
+            { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=br.com.ilog.konviva.mobile.v1" },
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/konviva-mobile/id1341038233?l=en" }
+        ]
+    },
+    {
+        "title": "Beleza Até você",
+        "description": "App de delivery de comida.",
+        "dataGroups": ["all", "hybrid"],
+        "links": [
+            { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.crabki" },
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/crabki/id1537477957?l=en" }
+        ]
+    },
+    {
+        "title": "Assine Online",
+        "description": "App de delivery de comida.",
+        "dataGroups": ["all", "hybrid"],
+        "links": [
+            { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.crabki" },
+            { "name": "App Store", "url": "https://apps.apple.com/br/app/crabki/id1537477957?l=en" }
+        ]
+    },
+    {
+        "title": "Irvem Rider",
+        "description": "App para motociclistas com rotas e rastreamento.",
+        "dataGroups": ["all", "android", "ios"]
+    },
+    {
+        "title": "Irvem Driver",
+        "description": "App para motoristas com gestão de entregas.",
+        "dataGroups": ["all", "android"]
+    },
+    {
+        "title": "Josh Journey",
+        "description": "Jogo 2D de plataforma desenvolvido em Unity.",
+        "dataGroups": ["all", "available", "games"],
+        "links": [
+            { "name": "Steam", "url": "https://store.steampowered.com/app/1383280/Josh_Journey_Darkness_Totems" }
+        ]
+    },
+    {
+        "title": "Tombo",
+        "description": "Jogo educativo sobre segurança na internet.",
+        "dataGroups": ["all", "games"]
+    },
+    {
+        "title": "Castle Defender",
+        "description": "Jogo educativo sobre segurança na internet.",
+        "dataGroups": ["all", "games"]
+    },
+    {
+        "title": "Perigos da Net",
+        "description": "Jogo educativo sobre segurança na internet.",
+        "dataGroups": ["all", "games"]
+    },
+    {
+        "title": "Caçadores de Lendas",
+        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "dataGroups": ["all", "games"]
+    },
+        {
+        "title": "Cosmo Rangers",
+        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "dataGroups": ["all", "games"]
+    },
+        {
+        "title": "Space Mesh",
+        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "dataGroups": ["all", "games"]
+    },
+        {
+        "title": "It's not a bird",
+        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "dataGroups": ["all", "games"]
+    },
+        {
+        "title": "Beer Lifter",
+        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "dataGroups": ["all", "games"]
+    },
+        {
+        "title": "Till Death",
+        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "dataGroups": ["all", "games"]
+    }
+];
+
+const jsonDataArrayOld = [
     {
         "title": "Openlane Uploader",
         "imageSrc": "assets/images/openlane_uploader.png",
@@ -332,10 +495,6 @@ const jsonDataArray = [
             {
                 "name": "In progress ...",
                 "url": "#"
-            },
-            {
-                "name": "Video",
-                "url": "https://www.youtube.com/watch?v=C0K2WeIF2CY"
             }
         ]
     },
@@ -411,3 +570,23 @@ const jsonDataArray = [
         ]
     }
 ];
+
+
+// Initialize portfolio - run after jsonDataArray is defined
+(function() {
+    const portfolioGrid = document.getElementById('portfolio-grid');
+    if (!portfolioGrid) {
+        console.error('Portfolio grid not found!');
+        return;
+    }
+    
+    jsonDataArray.forEach((jsonData, index) => {
+        const portfolioItem = createPortfolioItem(jsonData, index);
+        portfolioGrid.appendChild(portfolioItem);
+    });
+
+    // Initialize filter
+    initPortfolioFilter();
+    
+    console.log('Portfolio initialized with ' + jsonDataArray.length + ' items');
+})();
