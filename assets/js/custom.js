@@ -1,26 +1,4 @@
-// var i = 0;
-// var txt = 'Lorem ipsum typing effect!'; /* The text */
-// var speed = 50; /* The speed/duration of the effect in milliseconds */
-
-// function typeWriter() {
-//   if (i < txt.length) {
-//     document.getElementById("demo").innerHTML += txt.charAt(i);
-//     i++;
-//     setTimeout(typeWriter, speed);
-//   }
-// }
-
 (function($){
-
-	/* ---------------------------------------------- /*
-	 * Preloader
-	/* ---------------------------------------------- */
-
-	$(window).load(function() {
-		$('#loading').fadeOut();
-		$('#loading').delay(350).fadeOut('slow');
-		$('#filter li[data-group="all"]').trigger('click');
-	});
 
 		/* ---------------------------------------------- /*
 		 * Animated scrolling / Scroll Up
@@ -54,50 +32,6 @@
 		updateNavbarScrollState();
 
 		/* ---------------------------------------------- /*
-		 * Navbar
-		/* ---------------------------------------------- */
-
-		$('.header').sticky({
-			topSpacing: 0
-		});
-
-		$('body').scrollspy({
-			target: '.navbar-custom',
-			offset: 70
-		})
-
-		/* ---------------------------------------------- /*
-		 * Background image.
-		/* ---------------------------------------------- */
-
-		$(".js-height-full").height($(window).height());
-
-		$(window).resize(function(){
-			$(".js-height-full").height($(window).height());
-		});
-
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-			$('#home').css({'background-attachment': 'scroll'});
-		} else {
-			$('#home').parallax('50%', 0.1);
-		}
-
-		/* ---------------------------------------------- /*
-		 * Twitter
-		/* ---------------------------------------------- */
-
-
-			$('.testimonials').owlCarousel({
-				singleItem: true,
-				navigation: false,
-				pagination: false,
-				slideSpeed : 300,
-				paginationSpeed : 400,
-				autoPlay: 5000,
-				navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
-			});
-
-		/* ---------------------------------------------- /*
 		 * Initialize shuffle plugin
 		/* ---------------------------------------------- */
 
@@ -119,25 +53,4 @@
 		  type: 'image',
 		  gallery:{enabled:true}
 		});		
-
-		/* ---------------------------------------------- /*
-		 * WOW Animation When You Scroll
-		/* ---------------------------------------------- */
-
-		wow = new WOW({
-			mobile: false
-		});
-		wow.init();
-
-		/* ---------------------------------------------- /*
-		 * A jQuery plugin for fluid width video embeds
-		/* ---------------------------------------------- */
-
-		$('body').fitVids();
-
-
-
-
-
-
 })(jQuery);
