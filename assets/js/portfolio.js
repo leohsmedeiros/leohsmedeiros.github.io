@@ -156,15 +156,15 @@ const jsonDataArray = [
     },
     {
         "title": "Openlane Uploader",
-        "description": "Tooling for sellers to efficiently capture, manage, and upload vehicle data into auction systems.",
+        "description": "Mobile platform for individuals with inspector credentials to perform vehicle inspections.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/us/app/openlane-uploader/id1186571028" }
         ]
     },
     {
-        "title": "Peek Mobile",
-        "description": "Travel experiences platform featuring advanced 3D spatial mapping using iPhone camera and LiDAR for immersive navigation.",
+        "title": "Peek Camera v2 feature",
+        "description": "In-app tool for Peek Mobile that uses 360° imagery and LiDAR to generate equirectangular images and connected panoramas, enabling seamless navigation across indoor spaces.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/in/app/peek-mobile/id1469535539" }
@@ -172,7 +172,7 @@ const jsonDataArray = [
     },
     {
         "title": "Itaú cartões",
-        "description": "High-scale banking app for managing credit cards, payments, and financial operations with performance and reliability.",
+        "description": "High-scale banking app from biggest bank of Latam (Itaú) for managing credit cards, payments, and financial operations with performance and reliability. It has 10M+ active users on App Store.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/br/app/ita%C3%BA-cart%C3%B5es-de-cr%C3%A9dito/id394401915" }
@@ -196,7 +196,7 @@ const jsonDataArray = [
     },
     {
         "title": "Bird Id",
-        "description": "Audio-based identification system that recognizes bird species through sound analysis.",
+        "description": "Cloud-based digital certificate platform (ICP-Brasil) enabling legally binding document signing, secure authentication with OTP, and full account/device management—all within a streamlined mobile experience.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=br.com.vaultid.apps.authenticator" },
@@ -205,7 +205,7 @@ const jsonDataArray = [
     },
     {
         "title": "Crabki",
-        "description": "On-demand delivery platform integrated with real-time device control via Bluetooth.",
+        "description": "Bluetooth-based access control app that allows users to securely open and close doors without physical keys or internet, designed for environments like Airbnb and hotels.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.crabki" },
@@ -239,7 +239,7 @@ const jsonDataArray = [
     },
     {
         "title": "Irvem Rider",
-        "description": "Mobility platform with real-time tracking, featuring custom location systems using sensor fusion and Kalman filtering for improved accuracy.",
+        "description": "Ride-hailing app enabling users to request trips, track drivers in real time, and manage ride history and payments through a seamless mobile experience.",
         "dataGroups": ["all", "android", "ios"],
         "links": [
             { "name": "Video 1", "url": "https://drive.google.com/file/d/1QQetbWwSfruzn6ZGI2iYg8MVIaHHN3Hk/view?usp=sharing" },
@@ -248,7 +248,7 @@ const jsonDataArray = [
     },
     {
         "title": "Irvem Driver",
-        "description": "Mobility platform with real-time tracking, featuring custom location systems using sensor fusion and Kalman filtering for improved accuracy.",
+        "description": "Driver-facing app featuring real-time tracking powered by a custom location engine, providing accurate positioning and efficient trip management.",
         "dataGroups": ["all", "android"],
         "links": [
             { "name": "Video", "url": "https://drive.google.com/file/d/1rprX_6QpR_H0ECM2ywLC7xef0rsHKIMR/view?usp=sharing" }
