@@ -626,7 +626,7 @@ h6 {
 }
 
 .hover\:border-foreground\/30:hover {
-    border-color: #24242480;
+    border-color: white;
 }
 
 .hover\:text-foreground:hover {

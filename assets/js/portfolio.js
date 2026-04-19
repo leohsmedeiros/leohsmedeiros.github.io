@@ -139,7 +139,7 @@ function initPortfolioFilter() {
 const jsonDataArray = [
     {
         "title": "OneFootball",
-        "description": "App de resultados de futebol e estatísticas em tempo real.",
+        "description": "Real-time football platform used by millions, delivering live scores, video content, and personalized experiences at scale.",
         "dataGroups": ["all", "ios", "android", "hybrid"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=de.motain.iliga" },
@@ -148,7 +148,7 @@ const jsonDataArray = [
     },
     {
         "title": "Openlane Buyer",
-        "description": "App para compradores de veículos em leilões online.",
+        "description": "Mobile platform enabling seamless vehicle purchasing through large-scale online auctions.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/us/app/openlane-buyer/id1175036411" }
@@ -156,7 +156,7 @@ const jsonDataArray = [
     },
     {
         "title": "Openlane Uploader",
-        "description": "App para vendedores de veículos em leilões online.",
+        "description": "Tooling for sellers to efficiently capture, manage, and upload vehicle data into auction systems.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/us/app/openlane-uploader/id1186571028" }
@@ -164,7 +164,7 @@ const jsonDataArray = [
     },
     {
         "title": "Peek Mobile",
-        "description": "App de reservas e experiências de viagem.",
+        "description": "Travel experiences platform featuring advanced 3D spatial mapping using iPhone camera and LiDAR for immersive navigation.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/in/app/peek-mobile/id1469535539" }
@@ -172,7 +172,7 @@ const jsonDataArray = [
     },
     {
         "title": "Itaú cartões",
-        "description": "App de gestão de cartões de crédito Itaú.",
+        "description": "High-scale banking app for managing credit cards, payments, and financial operations with performance and reliability.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/br/app/ita%C3%BA-cart%C3%B5es-de-cr%C3%A9dito/id394401915" }
@@ -180,7 +180,7 @@ const jsonDataArray = [
     },
     {
         "title": "ShimmerFX",
-        "description": "Biblioteca open source para efeitos de shimmer no iOS.",
+        "description": "Lightweight iOS library for creating smooth and customizable loading animations.",
         "dataGroups": ["all", "personal", "ios"],
         "links": [
             { "name": "GitHub", "url": "https://github.com/leohsmedeiros/ShimmerFX" }
@@ -188,7 +188,7 @@ const jsonDataArray = [
     },
     {
         "title": "My Mixtapez",
-        "description": "App para descobrir e ouvir música rap e hip hop.",
+        "description": "Music streaming platform focused on hip-hop culture, delivering content to a large and engaged audience.",
         "dataGroups": ["all", "ios"],
         "links": [
             { "name": "App Store", "url": "https://apps.apple.com/us/app/my-mixtapez-rap-hip-hop/id525781368" }
@@ -196,7 +196,7 @@ const jsonDataArray = [
     },
     {
         "title": "Bird Id",
-        "description": "App de identificação de pássaros por áudio.",
+        "description": "Audio-based identification system that recognizes bird species through sound analysis.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=br.com.vaultid.apps.authenticator" },
@@ -205,7 +205,7 @@ const jsonDataArray = [
     },
     {
         "title": "Crabki",
-        "description": "App de delivery de comida.",
+        "description": "On-demand delivery platform integrated with real-time device control via Bluetooth.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.crabki" },
@@ -214,7 +214,7 @@ const jsonDataArray = [
     },
     {
         "title": "Konviva",
-        "description": "Plataforma de educação corporativa.",
+        "description": "Corporate learning platform delivering scalable education experiences across organizations.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=br.com.ilog.konviva.mobile.v1" },
@@ -223,7 +223,7 @@ const jsonDataArray = [
     },
     {
         "title": "Beleza Até você",
-        "description": "App de delivery de comida.",
+        "description": "On-demand beauty services platform enabling users to book makeup, hair, and nail professionals for at-home appointments.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Images", "url": "https://drive.google.com/drive/folders/1yUYqDUa_D-FZRzIQ2TnV_IBRkIdCWevE?usp=sharing" }
@@ -231,7 +231,7 @@ const jsonDataArray = [
     },    
     {
         "title": "Assine Online",
-        "description": "App de delivery de comida.",
+        "description": "Digital signature platform that allows users to securely sign and manage contracts online, streamlining document workflows similar to DocuSign.",
         "dataGroups": ["all", "hybrid"],
         "links": [
             { "name": "Images", "url": "https://drive.google.com/drive/folders/1HBxwhSWKqmmikz9zUn7NNQmAItW3WhdB?usp=sharing" }
@@ -239,7 +239,7 @@ const jsonDataArray = [
     },
     {
         "title": "Irvem Rider",
-        "description": "App para motociclistas com rotas e rastreamento.",
+        "description": "Mobility platform with real-time tracking, featuring custom location systems using sensor fusion and Kalman filtering for improved accuracy.",
         "dataGroups": ["all", "android", "ios"],
         "links": [
             { "name": "Video 1", "url": "https://drive.google.com/file/d/1QQetbWwSfruzn6ZGI2iYg8MVIaHHN3Hk/view?usp=sharing" },
@@ -248,7 +248,7 @@ const jsonDataArray = [
     },
     {
         "title": "Irvem Driver",
-        "description": "App para motoristas com gestão de entregas.",
+        "description": "Mobility platform with real-time tracking, featuring custom location systems using sensor fusion and Kalman filtering for improved accuracy.",
         "dataGroups": ["all", "android"],
         "links": [
             { "name": "Video", "url": "https://drive.google.com/file/d/1rprX_6QpR_H0ECM2ywLC7xef0rsHKIMR/view?usp=sharing" }
@@ -256,7 +256,7 @@ const jsonDataArray = [
     },
     {
         "title": "Josh Journey",
-        "description": "Jogo 2D de plataforma desenvolvido em Unity.",
+        "description": "2D platformer released on Steam, combining polished gameplay with atmospheric storytelling.",
         "dataGroups": ["all", "games"],
         "links": [
             { "name": "Steam", "url": "https://store.steampowered.com/app/1383280/Josh_Journey_Darkness_Totems" }
@@ -264,7 +264,7 @@ const jsonDataArray = [
     },
     {
         "title": "Perigos da net",
-        "description": "assets/images/perigos_da_net.jpeg",
+        "description": "Educational game designed to teach children about online risks—such as privacy, abuse, and scams—through age-appropriate storytelling and interactive gameplay.",
         "dataGroups": ["all", "games"],
         "links": [
             { "name": "Video", "url": "https://www.youtube.com/watch?v=-doWpIhVIJI" }
@@ -272,7 +272,7 @@ const jsonDataArray = [
     },
     {
         "title": "Tombo",
-        "description": "Jogo educativo sobre segurança na internet.",
+        "description": "Game jam entry recognized in PewDiePie’s competition, where players take on the role of a boss’s son bored with easy games, trying to creatively fail each level.",
         "dataGroups": ["all", "games"],
         "links":[
             { "name": "Video", "url": "https://www.youtube.com/watch?v=sQZy7SwdnVg" }
@@ -280,7 +280,7 @@ const jsonDataArray = [
     },
     {
         "title": "Castle Defender",
-        "description": "Jogo educativo sobre segurança na internet.",
+        "description": "Music-based educational game combining tower defense mechanics with quizzes, where correct answers recharge resources to defend against enemies.",
         "dataGroups": ["all", "games"],
         "links": [
             { "name": "Video", "url": "https://www.youtube.com/watch?v=Hu-XobiTGqk" }
@@ -288,7 +288,7 @@ const jsonDataArray = [
     },
     {
         "title": "Space Mesh",
-        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "description": "Turn-based online strategy game (1v1) where players control fleets on a grid, balancing positioning and risk—closer targets are safer, but distance amplifies damage.",
         "dataGroups": ["all", "personal", "games"],
         "links": [
             { "name": "In progress ...", "url": "#" }
@@ -296,7 +296,7 @@ const jsonDataArray = [
     },
     {
         "title": "Caçadores de Lendas",
-        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "description": "Educational game inspired by Brazilian folklore, bringing cultural stories to life through interactive gameplay.",
         "dataGroups": ["all", "personal", "games"],
         "links": [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.inovapps.CacadoresDeLendas&hl=pt_BR" },
@@ -306,7 +306,7 @@ const jsonDataArray = [
     },
     {
         "title": "Cosmo Rangers",
-        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "description": "Casual action game where each character has unique abilities, encouraging players to unlock, upgrade, and strategically choose heroes to survive increasingly challenging adventures.",
         "dataGroups": ["all", "personal", "games"],
         "links": [
             { "name": "Trailer", "url": "https://www.youtube.com/watch?v=FlEwYzl0b1w" },
@@ -315,7 +315,7 @@ const jsonDataArray = [
     },
     {
         "title": "It's not a bird",
-        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "description": "Fast-paced tap-to-fly game where players must dodge relentless kamikaze birds and survive as long as possible.",
         "dataGroups": ["all", "personal", "games"],
         "links": [
             { "name": "Trailer", "url": "https://www.youtube.com/watch?v=qesg-rmkU-4" },
@@ -325,7 +325,7 @@ const jsonDataArray = [
     },
     {
         "title": "Till Death",
-        "description": "Game Jam",
+        "description": "Award-winning game jam project where two couples fight off an alien invasion during their wedding, surviving as long as possible. \“till death do us part.\”.",
         "dataGroups": ["all", "personal", "games"],
         "links": [
             { "name": "Video", "url": "https://www.youtube.com/watch?v=tsKSAoqT8YU" }
@@ -333,7 +333,7 @@ const jsonDataArray = [
     },
     {
         "title": "Beer Lifter",
-        "description": "Jogo de plataforma com mecânicas inovadoras.",
+        "description": "Physics-based mini-game where players must balance drinking evenly from both sides—lean too far, and everything collapses.",
         "dataGroups": ["all", "games"],
         "links": [
             { "name": "Video", "url": "https://www.youtube.com/watch?v=LDFPMplmnm4" }
