@@ -76,15 +76,25 @@ function createPortfolioItem(json, index) {
         tagsHtml += '</div>';
     }
 
+    const svgIcon = techTags.includes('Unity')
+        ? `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2 w-6 h-6 text-muted-foreground/50">
+                <line x1="6" x2="10" y1="11" y2="11"/>
+                <line x1="8" x2="8" y1="9" y2="13"/>
+                <line x1="15" x2="15.01" y1="12" y2="12"/>
+                <line x1="18" x2="18.01" y1="10" y2="10"/>
+                <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/>
+            </svg>`
+        : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone w-6 h-6 text-muted-foreground/50">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+            </svg>`;
+
     div.innerHTML = `
         <div class="h-1 w-full transition-all duration-500 group-hover:h-1.5" style="background: ${color};"></div>
         <div class="p-6">
             <div class="flex items-start justify-between mb-3">
                 <h3 class="font-display font-bold text-lg text-foreground group-hover:text-accent transition-colors duration-300">${json.title}</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone w-6 h-6 text-muted-foreground/50">
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
-                    <path d="M12 18h.01"></path>
-                </svg>
+                ${svgIcon}
             </div>
             <p class="text-muted-foreground text-sm leading-relaxed mb-4">${json.description || ''}</p>
             ${tagsHtml}
@@ -219,7 +229,7 @@ const jsonDataArray = [
             { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.crabki" },
             { "name": "App Store", "url": "https://apps.apple.com/br/app/crabki/id1537477957?l=en" }
         ]
-    },
+    },    
     {
         "title": "Assine Online",
         "description": "App de delivery de comida.",
