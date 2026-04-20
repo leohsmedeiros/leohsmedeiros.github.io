@@ -359,7 +359,5 @@ const jsonDataArray = [
     });
 
     // Initialize filter
-    initPortfolioFilter();
-    
-    console.log('Portfolio initialized with ' + jsonDataArray.length + ' items');
+    initPortfolioFilter();    
 })();
