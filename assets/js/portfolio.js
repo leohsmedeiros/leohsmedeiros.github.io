@@ -69,9 +69,9 @@ function createPortfolioItem(json, index) {
     // Build tech tags HTML
     let tagsHtml = '';
     if (techTags.length > 0) {
-        tagsHtml = '<div class="flex flex-wrap gap-2 mb-4">';
+        tagsHtml = '<div class="flex flex-wrap gap-2">';
         techTags.forEach(tech => {
-            tagsHtml += `<span class="text-xs px-2.5 py-1 rounded-full bg-secondary text-muted-foreground border border-border/50">${tech}</span>`;
+            tagsHtml += `<span class="text-xs px-2.5 py-1 rounded-xl bg-secondary text-muted-foreground border border-border/50">${tech}</span>`;
         });
         tagsHtml += '</div>';
     }
@@ -91,14 +91,16 @@ function createPortfolioItem(json, index) {
 
     div.innerHTML = `
         <div class="h-1 w-full transition-all duration-500 group-hover:h-1.5" style="background: ${color};"></div>
-        <div class="p-6">
+        <div class="p-6 flex flex-col h-full">
             <div class="flex items-start justify-between mb-3">
                 <h3 class="font-display font-bold text-lg text-foreground group-hover:text-accent transition-colors duration-300">${json.title}</h3>
                 ${svgIcon}
             </div>
-            <p class="text-muted-foreground text-sm leading-relaxed mb-4">${json.description || ''}</p>
             ${tagsHtml}
-            ${linksHtml ? `<div class="flex gap-6 pt-2 border-t border-border/30">${linksHtml}</div>` : ''}
+            <p class="text-muted-foreground text-sm leading-relaxed spacer">${json.description || ''}</p>
+            <div class="mt-auto pt-4 border-t border-border/30">
+                ${linksHtml ? `<div class="flex gap-6 mt-3">${linksHtml}</div>` : ''}
+            </div>
         </div>
     `;
 

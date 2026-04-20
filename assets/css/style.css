@@ -281,6 +281,10 @@ h6 {
     padding-top: 0.5rem;
 }
 
+.pt-4 {
+    padding-top: 1rem;
+}
+
 .pt-8 {
     padding-top: 2rem;
 }
@@ -750,6 +754,10 @@ h6 {
 
 .mt-1 {
     margin-top: .25rem;
+}
+
+.mt-2 {
+    margin-top: .5rem;
 }
 
 .mt-8 {
