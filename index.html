@@ -1,274 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<title>Leo Medeiros Developer</title>
-
-	<!-- CSS -->
-
-	<!-- Bootstrap core CSS -->
-	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-	<!-- Font Awesome CSS v6.0.0 -->
-	<link href="assets/fontawesome-free-6.0.0-web/css/all.min.css" rel="stylesheet" media="screen">
-
-	<!-- Devicons -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-
-	<!-- Elegant icons CSS -->
-	<link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
-
-	<!--[if lte IE 7]>
-		<script src="assets/js/icons-lte-ie7.js"></script>
-	<![endif]-->
-
-	<!-- Magnific-popup lightbox -->
-	<link href="assets/css/magnific-popup.css" rel="stylesheet">
-
-	<!-- Owl Carousel -->
-	<link href="assets/css/owl.theme.css" rel="stylesheet">
-	<link href="assets/css/owl.carousel.css" rel="stylesheet">
-
-	<!-- Animate css -->
-	<link href="assets/css/animate.css" rel="stylesheet">
-
-	<!-- Custom styles CSS -->
-	<link href="assets/css/style.css" rel="stylesheet" media="screen">
-
-	<link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leonardo Medeiros — Senior Mobile Engineer</title>
+  <meta name="description" content="Leonardo Medeiros, Senior Mobile Engineer. Building mobile experiences with native and hybrid technologies for over 15 years.">
+  <meta name="author" content="Leonardo Medeiros">
+  <meta name="theme-color" content="#0E1014">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-	<!-- Preloader -->
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Leo Medeiros — home">
+        <span class="brand-mark">LM</span>
+        <span>Leo Medeiros<span class="accent">.</span></span>
+      </a>
 
-	<div id="loading">
-		<div id="loading-center">
-			<div id="loading-center-absolute">
-				<div class="object" id="object_one"></div>
-				<div class="object" id="object_two"></div>
-				<div class="object" id="object_three"></div>
-				<div class="object" id="object_four"></div>
-			</div>
-		</div>
-	</div>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#about">About me</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
 
-	<!-- Navigation start -->
+      <a class="btn btn-primary btn-sm nav-cta" href="#contact">Let's talk</a>
 
-	<header class="header">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-		<nav class="navbar navbar-custom">
+  <main>
+    <!-- ========== HOME ========== -->
+    <section class="hero gridbg" id="home">
+      <div class="squares" aria-hidden="true">
+        <i class="sq" style="--s:28px; left:6%;  top:18%"></i>
+        <i class="sq fill" style="--s:56px; left:44%; top:10%; animation-delay:-3s"></i>
+        <i class="sq" style="--s:18px; left:52%; top:80%; animation-delay:-6s"></i>
+        <i class="sq fill" style="--s:40px; left:3%;  top:74%; animation-delay:-9s"></i>
+        <i class="sq" style="--s:22px; left:92%; top:14%; animation-delay:-2s"></i>
+        <i class="sq fill" style="--s:34px; left:88%; top:84%; animation-delay:-5s"></i>
+        <i class="sq" style="--s:14px; left:30%; top:90%; animation-delay:-11s"></i>
+      </div>
 
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="code-kicker mono rise" style="--d:.05s">
+            <span class="accent">&gt;</span>
+            <span id="typed" data-text='print("Senior Mobile Engineer")'>print("Senior Mobile Engineer")</span><span class="caret"></span>
+          </div>
 
-				<div class="collapse navbar-collapse" id="custom-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#portfolio">Portfolio</a></li>
-						<li><a href="#whoiam">Who I am</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
+          <h1 class="hero-title rise" style="--d:.15s">Leonardo<br><span class="accent">Medeiros</span></h1>
 
-			</div><!-- .container -->
+          <p class="hero-sub rise" style="--d:.25s">Building mobile experiences with native and hybrid technologies for over 15 years.</p>
 
-		</nav>
+          <div class="hero-actions rise" style="--d:.35s">
+            <a class="btn btn-primary" href="#projects">View projects
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#about">About me</a>
+          </div>
 
-	</header>
+          <div class="socials rise" style="--d:.45s">
+            <a class="social" href="https://github.com/leohsmedeiros" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+            <a class="social" href="https://www.linkedin.com/in/leonardo-medeiros-developer/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a class="social" href="mailto:leohsmedeiros@gmail.com" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+            <a class="social" href="https://www.youtube.com/@CodingwithLeoM" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+          </div>
+        </div>
 
-	<!-- Navigation end -->
+        <div class="hero-visual rise" style="--d:.6s">
+          <div class="portrait-wrap" id="portrait">
+            <div class="ring" aria-hidden="true"></div>
+            <div class="portrait">
+              <img src="https://github.com/leohsmedeiros.png?size=600"
+                   onerror="this.onerror=null; this.src='assets/images/profile.png'"
+                   alt="Portrait of Leonardo Medeiros" width="536" height="537">
+            </div>
+            <div class="chip-float" style="left:-28px; top:10%"><span class="dot"></span>Swift</div>
+            <div class="chip-float" style="right:-34px; top:28%; animation-delay:-1.2s"><span class="dot"></span>Kotlin</div>
+            <div class="chip-float" style="left:-40px; top:62%; animation-delay:-2.4s"><span class="dot"></span>Flutter</div>
+            <div class="chip-float" style="right:-6px; bottom:8%; animation-delay:-3.6s"><span class="dot"></span>Unity</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<!-- Portfolio start -->
+    <!-- ========== TECH MARQUEE ========== -->
+    <div class="marquee-band" aria-label="Technologies">
+      <div class="marquee mono" id="marquee">
+        <!-- filled by main.js (duplicated for a seamless loop) -->
+        <span>Swift</span><span>SwiftUI</span><span>UIKit</span><span>Kotlin</span><span>Java</span><span>Flutter</span>
+        <span>Dart</span><span>Unity</span><span>C#</span><span>LiDAR</span><span>Kalman filtering</span><span>Real-time tracking</span>
+      </div>
+    </div>
 
-	<section id="portfolio" class="module">
-		<div class="container">
-			<div class="row">
+    <!-- ========== PROJECTS ========== -->
+    <section class="section container" id="projects">
+      <div class="section-head reveal">
+        <div class="section-intro">
+          <span class="kicker mono">// projects</span>
+          <h2 class="h2">Portfolio</h2>
+          <p class="lead">Apps at scale, open-source libraries and games — from banking used by millions to game jam winners.</p>
+        </div>
 
-				<div class="col-sm-6 col-sm-offset-3">
+        <div class="filters" role="group" aria-label="Filter projects" id="filters">
+          <button type="button" class="pill is-active" data-group="all" aria-pressed="true">All <span class="n"></span></button>
+          <button type="button" class="pill" data-group="ios" aria-pressed="false">iOS <span class="n"></span></button>
+          <button type="button" class="pill" data-group="android" aria-pressed="false">Android <span class="n"></span></button>
+          <button type="button" class="pill" data-group="hybrid" aria-pressed="false">Hybrid <span class="n"></span></button>
+          <button type="button" class="pill" data-group="games" aria-pressed="false">Games <span class="n"></span></button>
+          <button type="button" class="pill" data-group="personal" aria-pressed="false">Personal <span class="n"></span></button>
+        </div>
+      </div>
 
-					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">Portfolio</h2>
-						<div class="module-line"></div>
-					</div>
+      <ul class="grid" id="portfolio-list" aria-live="polite"></ul>
+    </section>
 
-				</div>
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about">
+      <div class="container section about-inner">
+        <div class="about-row">
+          <div class="about-copy reveal">
+            <span class="kicker mono">// about me</span>
+            <h2 class="h2">I build mobile experiences <span class="accent">that scale.</span></h2>
+            <p class="lead">From high-performance iOS apps to cross-platform solutions and games. I've built 3D spatial experiences using LiDAR and iPhone cameras, and location tracking that fuses GPS, accelerometer and gyroscope data with Kalman filtering.</p>
+            <p class="lead">I focus on performance, scalability, architecture — and solving the problems most teams avoid.</p>
+            <div class="tags">
+              <span class="tag">Performance</span><span class="tag">Scalability</span><span class="tag">Architecture</span><span class="tag">Hard problems</span>
+            </div>
+          </div>
 
-			</div><!-- .row -->
+          <div class="panel skills reveal">
+            <span class="mono muted small">experience.years</span>
+            <div class="skill">
+              <div class="skill-row"><span>iOS · Swift · SwiftUI · UIKit</span><span class="mono muted">8 yrs</span></div>
+              <div class="bar"><div style="--w:100%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-row"><span>Unity · C#</span><span class="mono muted">7 yrs</span></div>
+              <div class="bar"><div style="--w:87.5%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-row"><span>Android · Kotlin · Java</span><span class="mono muted">4 yrs</span></div>
+              <div class="bar"><div style="--w:50%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-row"><span>Flutter · Dart</span><span class="mono muted">3 yrs</span></div>
+              <div class="bar"><div style="--w:37.5%"></div></div>
+            </div>
+          </div>
+        </div>
 
-			<!-- Portfolio Filter start-->
+        <div class="stats">
+          <div class="stat reveal"><div class="stat-num" data-count="15" data-suffix="+">15+</div><div class="stat-label">years as Software Engineer</div></div>
+          <div class="stat reveal"><div class="stat-num" data-count="8" data-suffix="+">8+</div><div class="stat-label">years as Mobile Engineer</div></div>
+          <div class="stat reveal"><div class="stat-num" data-count="500" data-suffix="k+">500k+</div><div class="stat-label">downloads on personal projects</div></div>
+          <div class="stat reveal"><div class="stat-num" data-count="10" data-suffix="M+">10M+</div><div class="stat-label">active users on the largest app</div></div>
+        </div>
 
-			<div class="row">
+        <div class="features">
+          <div class="feat reveal">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+            <div><h3 class="h3">3D spatial experiences</h3><p class="muted">Capturing and navigating real spaces using LiDAR and iPhone cameras.</p></div>
+          </div>
+          <div class="feat reveal">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h3 class="h3">Precise location tracking</h3><p class="muted">Fusing GPS, accelerometer and gyroscope data with Kalman filtering.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				<div class="col-sm-12">
+    <!-- ========== CONTACT ========== -->
+    <section class="section container" id="contact">
+      <div class="contact gridbg reveal">
+        <i class="sq fill" aria-hidden="true" style="--s:120px; right:-30px; top:-30px; border-radius:20px"></i>
+        <i class="sq" aria-hidden="true" style="--s:48px; right:14%; bottom:12%; animation-delay:-4s"></i>
 
-					<ul id="filter">
-						<li class="active" data-group="all">All</li>
-						<li data-group="available"><span class="fa-solid fa-store"></span> AVAILABLE ON APP STORE</li>
-						<li data-group="personal"><span class="fa-solid fa-circle-user"></span> PERSONAL PROJECTS</li>
-						<li data-group="ios"><span class="devicon-apple-plain"></span> IOS NATIVE</li>
-						<li data-group="android"><span class="devicon-android-plain"></span> ANDROID NATIVE</li>
-						<li data-group="hybrid"><span class="devicon-flutter-plain"></span> HYBRID</li>
-						<li data-group="games"><span class="devicon-unity-original"></span> GAMES</li>
-					</ul>
+        <div class="contact-copy">
+          <span class="kicker mono">// contact</span>
+          <h2 class="h1">Let's talk<span class="accent">.</span></h2>
+          <p class="lead">Have a mobile product to build, scale or rescue? Reach out — I usually answer within a day.</p>
+          <a class="btn btn-primary" href="mailto:leohsmedeiros@gmail.com">Send an email
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
 
-				</div>
+        <div class="contact-links">
+          <a class="ccard" href="https://github.com/leohsmedeiros" target="_blank" rel="noopener">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></div>
+            <div class="ccard-text"><strong>GitHub</strong><span>Open source and personal projects</span></div>
+            <svg class="arr" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <a class="ccard" href="https://www.linkedin.com/in/leonardo-medeiros-developer/" target="_blank" rel="noopener">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <div class="ccard-text"><strong>LinkedIn</strong><span>Professional experience and networking</span></div>
+            <svg class="arr" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <a class="ccard" href="mailto:leohsmedeiros@gmail.com">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <div class="ccard-text"><strong>Email</strong><span>leohsmedeiros@gmail.com</span></div>
+            <svg class="arr" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <a class="ccard" href="https://www.youtube.com/@CodingwithLeoM" target="_blank" rel="noopener">
+            <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></div>
+            <div class="ccard-text"><strong>YouTube</strong><span>Coding with Leo M</span></div>
+            <svg class="arr" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-			</div><!-- .row -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Leonardo Medeiros. Built with passion.</span>
+      <a class="mono" href="#home">back_to_top() ↑</a>
+    </div>
+  </footer>
 
-			<!-- Portfolio Filter end -->
-
-		</div><!-- .contaier -->
-
-		<ul id="portfolio-list" class="portfolio-items-container"></ul><!-- .projects-container -->
-
-	</section>
-
-	<!-- Portfolio end -->
-
-	<!-- Who am I start -->
-
-	<section id="whoiam" class="module module-gray">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">Leonardo Medeiros</h2>
-						<div class="module-line"></div>
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="row">
-				<div class="containerProfile">
-					<img class="profilePhoto" src="assets/images/profile.png">
-				</div>
-				<div class="module-subtitle" style="margin-top: 20px; text-align: start;">
-					A T-shaped <strong class="module-title">Senior Mobile Engineer</strong> with a background in Computer Science, boasting over a decade of industry expertise. Specialized in Swift and iOS development, but with knowledge in Kotlin and Java for Android, cross-platform mobile applications with Flutter and game development with Unity3D.<br><br>
-
-					Notable projects including a proprietary GPS tracking optimization library, a framework to translate Portuguese to LIBRAS using Kinect and a successful app development for a real estate product using iPhone LiDAR technology to map a building and creating a 3D space to navigate through it.<br><br>
-
-					Developed independent games achieving over 400,000 downloads, showcasing technical skills and creativity in software development.<br><br>
-
-					Accessibility implementation experience on apps serving over 10 million users, demonstrating a commitment to inclusive design.<br><br>
-
-					Proven ability to deliver cutting-edge mobile applications, emphasizing feature development, seamless functionality across devices, and rigorous code quality standards. Skilled in team collaboration, writing comprehensive tests, and ensuring high-performance, user-friendly applications. Dedicated to driving innovation and excellence in mobile technology.
-				</div>
-			</div>
-
-			<div class="row">
-				<h3 style="margin: 20px 0px"><p>Main Skills:</p></h3>
-				<div class="iconbox-icon" style="justify-content: space-evenly;">
- 					<span class="devicon-swift-plain"> <h5>Swift / SwiftUI</h5> </span>
-					<span class="devicon-flutter-plain"> <h5>Flutter</h5> </span>
-					<span class="devicon-unity-original"> <h5>Unity</h5> </span>
-					<span class="devicon-android-plain"> <h5>Java</h5> </span>
-					<span class="devicon-kotlin-plain"> <h5>Kotlin</h5> </span>
- 				</div>
-			</div>
-		</div><!-- .container -->
-	</section>
-
-	<!-- Who am I end -->
-
-
-	<!-- Contact start -->
-
-	<section id="contact" class="module">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="module-header">
-						<h2 class="module-title">Contact</h2>
-						<div class="module-line"></div>
-						<div class="module-subtitle">
-							Do you have any idea you would like to discuss about? Please, get in touch.
-						</div>
-						<!-- <div class="module-line"></div> -->
-
-						<ul class="social-links">
-							<li>
-								<a href="#" data-wow-delay=".4s" onclick="window.location.href = 'mailto:leohsmedeiros@gmail.com'; return false;"><span class="fas fa-envelope"></span></a>
-							</li>
-							<li>
-								<a href="https://github.com/leohsmedeiros" class="wow fadeInUp" data-wow-delay=".2s"><span class="fab fa-github"></span></a>
-							</li>
-							<li>
-								<a href="https://www.linkedin.com/in/leonardo-medeiros-4236a329/" class="wow fadeInUp" data-wow-delay=".3s"><span class="fab fa-linkedin-in"></span></a>
-							</li>
-							<li>
-								<i class="fab fa-instagram"></i>
-								<a href="https://www.instagram.com/leo.medeiros.dev" class="wow fadeInUp"  data-wow-delay=".4s"><span class="fab fa-instagram"></span></a>
-							</li>
-						</ul>
-
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</section>
-
-	<!-- Contact end -->
-
-	<!-- Footer start -->
-
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-12">
-					<p class="copyright">
-						© 2024 All Rights Reserved.
-					</p>
-				</div>
-
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</footer>
-
-	<!-- Footer end -->
-
-	<!-- Scroll-up -->
-
-	<div class="scroll-up">
-		<a href="#portfolio"><span class="fa fa-angle-double-up"></span></a>
-	</div>
-
-	<!-- Javascript files -->
-
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
-	<script src="assets/js/imagesloaded.pkgd.js"></script>
-	<script src="assets/js/jquery.shuffle.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<script src="assets/js/jquery.fitvids.js"></script>
-	<script src="assets/js/jquery.sticky.js"></script>
-	<script src="assets/js/smoothscroll.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<!-- Custom scripts -->
-	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/custom-shuffle-init.js"></script>
-	<script src="assets/js/portfolio.js"></script>
-
+  <!-- Data first (defines jsonDataArray), then the app -->
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
