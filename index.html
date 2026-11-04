@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 
@@ -44,6 +44,15 @@
   <main>
     <!-- ========== HOME ========== -->
     <section class="hero gridbg" id="home">
+      <!-- Animated background (aurora + flowing light ribbons), Home only. Drawn by main.js -->
+      <div class="bg-fx" aria-hidden="true">
+        <div class="aurora a1"></div>
+        <div class="aurora a2"></div>
+        <div class="aurora a3"></div>
+        <canvas id="bg-canvas"></canvas>
+        <div class="bg-vignette"></div>
+      </div>
+
       <div class="squares" aria-hidden="true">
         <i class="sq" style="--s:28px; left:6%;  top:18%"></i>
         <i class="sq fill" style="--s:56px; left:44%; top:10%; animation-delay:-3s"></i>
@@ -240,7 +249,7 @@
   </footer>
 
   <!-- Data first (defines jsonDataArray), then the app -->
-  <script src="assets/js/portfolio.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/portfolio.js?v=4"></script>
+  <script src="assets/js/main.js?v=4"></script>
 </body>
 </html>

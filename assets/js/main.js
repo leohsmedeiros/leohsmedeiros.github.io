@@ -261,8 +261,187 @@
         });
     }
 
+    // ---------- Animated background: flowing light ribbons + streaks ----------
+    function initBackground() {
+        const canvas = document.getElementById('bg-canvas');
+        if (!canvas || !canvas.getContext) return;
+        const host = canvas.closest('.hero') || canvas.parentElement; // the animation lives only in the Home section
+        const ctx = canvas.getContext('2d');
+
+        const toRgb = (hex) => {
+            const m = hex.replace('#', '').match(/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+            return m ? [parseInt(m[1], 16), parseInt(m[2], 16), parseInt(m[3], 16)] : [61, 220, 151];
+        };
+        const accent = toRgb(getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#3DDC97');
+        const teal = [40, 196, 186];
+        const deep = [22, 140, 160];
+
+        let w = 0, h = 0, dpr = 1, mobile = false, step = 16;
+        let ribbons = [], streaks = [];
+        let scrollPhase = 0, targetScroll = 0;
+        let running = false, last = 0;
+
+        function setup() {
+            dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            w = host.clientWidth;
+            h = host.clientHeight;
+            canvas.width = Math.round(w * dpr);
+            canvas.height = Math.round(h * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            mobile = w < 720;
+            step = mobile ? 14 : 18;
+
+            // Each ribbon is a bundle of lines that twist around a wavy center line.
+            ribbons = mobile ? [
+                { y: .22, amp: .07, freq: 1.5, tilt: -.18, spread: 46, lines: 11, speed: .22, phase: 0.0, color: accent },
+                { y: .58, amp: .08, freq: 1.2, tilt: .22, spread: 54, lines: 12, speed: -.17, phase: 2.1, color: teal },
+                { y: .88, amp: .06, freq: 1.8, tilt: -.10, spread: 36, lines: 9, speed: .14, phase: 4.2, color: deep }
+            ] : [
+                { y: .30, amp: .12, freq: 1.25, tilt: -.14, spread: 80, lines: 18, speed: .16, phase: 0.0, color: accent },
+                { y: .70, amp: .10, freq: 0.95, tilt: .10, spread: 64, lines: 15, speed: -.12, phase: 2.4, color: teal },
+                { y: .52, amp: .16, freq: 0.70, tilt: .04, spread: 40, lines: 8, speed: .09, phase: 4.6, color: deep }
+            ];
+
+            const count = mobile ? 6 : 10;
+            streaks = [];
+            for (let i = 0; i < count; i++) streaks.push(newStreak(true));
+        }
+
+        function newStreak(randomStart) {
+            const r = Math.floor(Math.random() * ribbons.length);
+            return {
+                r,
+                k: (Math.random() - .5) * .9,                 // which line of the ribbon it rides on
+                u: randomStart ? Math.random() * 1.2 - .1 : -.15 - Math.random() * .4,
+                v: (mobile ? .09 : .06) + Math.random() * .08, // screen widths per second
+                len: .08 + Math.random() * .14,                // tail length (fraction of width)
+                a: .55 + Math.random() * .45
+            };
+        }
+
+        // y position of line k (-.5..+.5) of ribbon r at horizontal fraction u, time t (s)
+        function yAt(r, k, u, t) {
+            const x = u * w;
+            const ph = r.phase + t * r.speed + scrollPhase * (r.speed > 0 ? 1 : -1);
+            const center = h * r.y + r.tilt * (x - w / 2) + h * r.amp * Math.sin(u * r.freq * Math.PI * 2 + ph);
+            const twist = Math.cos(u * Math.PI * 1.6 + ph * 1.3) * r.spread;
+            return center + k * twist + k * k * 18 * Math.sin(ph + u * 4);
+        }
+
+        function draw(t) {
+            ctx.clearRect(0, 0, w, h);
+            ctx.globalCompositeOperation = 'lighter';
+            ctx.lineWidth = 1;
+
+            // Ribbons
+            for (const r of ribbons) {
+                const [cr, cg, cb] = r.color;
+                // soft halo along the ribbon's center
+                ctx.lineCap = 'round';
+                ctx.lineWidth = r.spread * .9;
+                ctx.strokeStyle = `rgba(${cr},${cg},${cb},.035)`;
+                ctx.beginPath();
+                for (let x = -step; x <= w + step; x += step * 2) {
+                    const y = yAt(r, 0, x / w, t);
+                    if (x === -step) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                ctx.lineWidth = 1;
+
+                for (let i = 0; i < r.lines; i++) {
+                    const k = r.lines === 1 ? 0 : i / (r.lines - 1) - .5;
+                    const alpha = .05 + .16 * (1 - Math.abs(k) * 2);
+                    ctx.strokeStyle = `rgba(${cr},${cg},${cb},${alpha.toFixed(3)})`;
+                    ctx.beginPath();
+                    for (let x = -step; x <= w + step; x += step) {
+                        const y = yAt(r, k, x / w, t);
+                        if (x === -step) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                    }
+                    ctx.stroke();
+                }
+            }
+
+            // Streaks of light riding the ribbons
+            for (const s of streaks) {
+                const r = ribbons[s.r];
+                const [cr, cg, cb] = r.color;
+                const u0 = s.u - s.len, u1 = s.u;
+                const x0 = u0 * w, y0 = yAt(r, s.k, u0, t);
+                const x1 = u1 * w, y1 = yAt(r, s.k, u1, t);
+                const grad = ctx.createLinearGradient(x0, y0, x1, y1);
+                grad.addColorStop(0, `rgba(${cr},${cg},${cb},0)`);
+                grad.addColorStop(1, `rgba(${Math.min(cr + 80, 255)},${Math.min(cg + 40, 255)},${Math.min(cb + 60, 255)},${s.a})`);
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = 1.6;
+                ctx.beginPath();
+                const segs = 14;
+                for (let j = 0; j <= segs; j++) {
+                    const u = u0 + (u1 - u0) * (j / segs);
+                    const x = u * w, y = yAt(r, s.k, u, t);
+                    if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                // soft glowing head
+                const glow = ctx.createRadialGradient(x1, y1, 0, x1, y1, 10);
+                glow.addColorStop(0, `rgba(220,255,240,${(s.a * .9).toFixed(2)})`);
+                glow.addColorStop(1, 'rgba(220,255,240,0)');
+                ctx.fillStyle = glow;
+                ctx.fillRect(x1 - 10, y1 - 10, 20, 20);
+            }
+            ctx.globalCompositeOperation = 'source-over';
+        }
+
+        function frame(now) {
+            if (!running) return;
+            const dt = Math.min((now - (last || now)) / 1000, .05);
+            last = now;
+            scrollPhase += (targetScroll - scrollPhase) * .08; // eased parallax from scrolling
+            for (let i = 0; i < streaks.length; i++) {
+                const s = streaks[i];
+                s.u += s.v * dt;
+                if (s.u - s.len > 1.1) streaks[i] = newStreak(false);
+            }
+            draw(now / 1000);
+            requestAnimationFrame(frame);
+        }
+
+        function start() { if (!running) { running = true; last = 0; requestAnimationFrame(frame); } }
+        function stop() { running = false; }
+
+        setup();
+
+        window.addEventListener('scroll', () => { targetScroll = window.scrollY * .0012; }, { passive: true });
+
+        // Rebuild when the Home section changes size (rotation, window resize, fonts loading).
+        let lastW = w, lastH = h, resizeTimer;
+        const onResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const nw = host.clientWidth, nh = host.clientHeight;
+                if (nw !== lastW || nh !== lastH) {
+                    lastW = nw; lastH = nh; setup();
+                    if (!running) draw(0);
+                }
+            }, 150);
+        };
+        if ('ResizeObserver' in window) new ResizeObserver(onResize).observe(host);
+        else window.addEventListener('resize', onResize);
+
+        if (prefersReducedMotion) { draw(0); return; } // static frame only
+
+        // Only animate while the Home section is on screen and the tab is visible.
+        let inView = true;
+        const update = () => { (inView && !document.hidden) ? start() : stop(); };
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((entries) => { inView = entries[0].isIntersecting; update(); }).observe(host);
+        }
+        document.addEventListener('visibilitychange', update);
+        update();
+    }
+
     // ---------- Boot ----------
     function init() {
+        initBackground();
         const items = renderPortfolio();
         initFilters(items);
         playEnter(items);
