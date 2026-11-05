@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -28,8 +28,8 @@
 
       <nav class="nav-links" id="nav-links" aria-label="Main">
         <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#about">About me</a>
+        <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
 
@@ -96,21 +96,6 @@
             </a>
           </div>
         </div>
-
-        <div class="hero-visual rise" style="--d:.6s">
-          <div class="portrait-wrap" id="portrait">
-            <div class="ring" aria-hidden="true"></div>
-            <div class="portrait">
-              <img src="https://github.com/leohsmedeiros.png?size=600"
-                   onerror="this.onerror=null; this.src='assets/images/profile.png'"
-                   alt="Portrait of Leonardo Medeiros" width="536" height="537">
-            </div>
-            <div class="chip-float" style="left:-28px; top:10%"><span class="dot"></span>Swift</div>
-            <div class="chip-float" style="right:-34px; top:28%; animation-delay:-1.2s"><span class="dot"></span>Kotlin</div>
-            <div class="chip-float" style="left:-40px; top:62%; animation-delay:-2.4s"><span class="dot"></span>Flutter</div>
-            <div class="chip-float" style="right:-6px; bottom:8%; animation-delay:-3.6s"><span class="dot"></span>Unity</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -123,34 +108,23 @@
       </div>
     </div>
 
-    <!-- ========== PROJECTS ========== -->
-    <section class="section container" id="projects">
-      <div class="section-head reveal">
-        <div class="section-intro">
-          <span class="kicker mono">// projects</span>
-          <h2 class="h2">Portfolio</h2>
-          <p class="lead">Apps at scale, open-source libraries and games — from banking used by millions to game jam winners.</p>
-        </div>
-
-        <div class="filters" role="group" aria-label="Filter projects" id="filters">
-          <button type="button" class="pill is-active" data-group="all" aria-pressed="true">All <span class="n"></span></button>
-          <button type="button" class="pill" data-group="ios" aria-pressed="false">iOS <span class="n"></span></button>
-          <button type="button" class="pill" data-group="android" aria-pressed="false">Android <span class="n"></span></button>
-          <button type="button" class="pill" data-group="hybrid" aria-pressed="false">Hybrid <span class="n"></span></button>
-          <button type="button" class="pill" data-group="games" aria-pressed="false">Games <span class="n"></span></button>
-          <button type="button" class="pill" data-group="personal" aria-pressed="false">Personal <span class="n"></span></button>
-        </div>
-      </div>
-
-      <ul class="grid" id="portfolio-list" aria-live="polite"></ul>
-    </section>
-
     <!-- ========== ABOUT ========== -->
     <section class="about" id="about">
       <div class="container section about-inner">
         <div class="about-row">
           <div class="about-copy reveal">
-            <span class="kicker mono">// about me</span>
+            <div class="about-id">
+              <div class="avatar">
+                <img src="https://github.com/leohsmedeiros.png?size=300"
+                     onerror="this.onerror=null; this.src='assets/images/profile.png'"
+                     alt="Portrait of Leonardo Medeiros" width="300" height="300" loading="lazy">
+              </div>
+              <div class="about-id-text">
+                <span class="kicker mono">// about me</span>
+                <span class="about-name">Leonardo Medeiros</span>
+                <span class="about-role">Senior Mobile Engineer</span>
+              </div>
+            </div>
             <h2 class="h2">I build mobile experiences <span class="accent">that scale.</span></h2>
             <p class="lead">From high-performance iOS apps to cross-platform solutions and games. I've built 3D spatial experiences using LiDAR and iPhone cameras, and location tracking that fuses GPS, accelerometer and gyroscope data with Kalman filtering.</p>
             <p class="lead">I focus on performance, scalability, architecture — and solving the problems most teams avoid.</p>
@@ -198,6 +172,28 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section container" id="projects">
+      <div class="section-head reveal">
+        <div class="section-intro">
+          <span class="kicker mono">// projects</span>
+          <h2 class="h2">Portfolio</h2>
+          <p class="lead">Apps at scale, open-source libraries and games — from banking used by millions to game jam winners.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter projects" id="filters">
+          <button type="button" class="pill is-active" data-group="all" aria-pressed="true">All <span class="n"></span></button>
+          <button type="button" class="pill" data-group="ios" aria-pressed="false">iOS <span class="n"></span></button>
+          <button type="button" class="pill" data-group="android" aria-pressed="false">Android <span class="n"></span></button>
+          <button type="button" class="pill" data-group="hybrid" aria-pressed="false">Hybrid <span class="n"></span></button>
+          <button type="button" class="pill" data-group="games" aria-pressed="false">Games <span class="n"></span></button>
+          <button type="button" class="pill" data-group="personal" aria-pressed="false">Personal <span class="n"></span></button>
+        </div>
+      </div>
+
+      <ul class="grid" id="portfolio-list" aria-live="polite"></ul>
     </section>
 
     <!-- ========== CONTACT ========== -->
@@ -249,7 +245,7 @@
   </footer>
 
   <!-- Data first (defines jsonDataArray), then the app -->
-  <script src="assets/js/portfolio.js?v=4"></script>
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/portfolio.js?v=6"></script>
+  <script src="assets/js/main.js?v=6"></script>
 </body>
 </html>

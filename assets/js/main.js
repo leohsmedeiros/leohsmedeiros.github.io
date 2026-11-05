@@ -277,7 +277,7 @@
         const deep = [22, 140, 160];
 
         let w = 0, h = 0, dpr = 1, mobile = false, step = 16;
-        let ribbons = [], streaks = [];
+        let ribbons = [], streaks = [], phones = [];
         let scrollPhase = 0, targetScroll = 0;
         let running = false, last = 0;
 
@@ -292,15 +292,27 @@
             step = mobile ? 14 : 18;
 
             // Each ribbon is a bundle of lines that twist around a wavy center line.
+            // `through` = indexes of the phones this ribbon bends to pass through.
             ribbons = mobile ? [
-                { y: .22, amp: .07, freq: 1.5, tilt: -.18, spread: 46, lines: 11, speed: .22, phase: 0.0, color: accent },
-                { y: .58, amp: .08, freq: 1.2, tilt: .22, spread: 54, lines: 12, speed: -.17, phase: 2.1, color: teal },
-                { y: .88, amp: .06, freq: 1.8, tilt: -.10, spread: 36, lines: 9, speed: .14, phase: 4.2, color: deep }
+                { y: .22, amp: .07, freq: 1.5, tilt: -.18, spread: 46, lines: 11, speed: .22, phase: 0.0, color: accent, through: [0] },
+                { y: .58, amp: .08, freq: 1.2, tilt: .22, spread: 54, lines: 12, speed: -.17, phase: 2.1, color: teal, through: [1] },
+                { y: .88, amp: .06, freq: 1.8, tilt: -.10, spread: 36, lines: 9, speed: .14, phase: 4.2, color: deep, through: [] }
             ] : [
-                { y: .30, amp: .12, freq: 1.25, tilt: -.14, spread: 80, lines: 18, speed: .16, phase: 0.0, color: accent },
-                { y: .70, amp: .10, freq: 0.95, tilt: .10, spread: 64, lines: 15, speed: -.12, phase: 2.4, color: teal },
-                { y: .52, amp: .16, freq: 0.70, tilt: .04, spread: 40, lines: 8, speed: .09, phase: 4.6, color: deep }
+                { y: .30, amp: .12, freq: 1.25, tilt: -.14, spread: 80, lines: 18, speed: .16, phase: 0.0, color: accent, through: [0, 2] },
+                { y: .70, amp: .10, freq: 0.95, tilt: .10, spread: 64, lines: 15, speed: -.12, phase: 2.4, color: teal, through: [1, 2] },
+                { y: .52, amp: .16, freq: 0.70, tilt: .04, spread: 40, lines: 8, speed: .09, phase: 4.6, color: deep, through: [1] }
             ];
+
+            // Phones with skeleton screens + shimmer (a nod to ShimmerFX). Positions are fractions of the Home section.
+            const base = mobile ? Math.min(w * .5, 220) : Math.min(h * .42, 340);
+            phones = (mobile ? [
+                { x: .95, y: .24, s: .85, rot: .08, ph: 0.0, L: 0 },
+                { x: .95, y: .93, s: .7, rot: -.07, ph: 2.0, L: 1 }
+            ] : [
+                { x: .60, y: .26, s: .6, rot: .09, ph: 1.2, L: 2 },
+                { x: .73, y: .70, s: .8, rot: -.08, ph: 2.6, L: 1 },
+                { x: .90, y: .38, s: 1, rot: -.05, ph: 0.0, L: 0 }
+            ]).map((p) => Object.assign(p, { h: base * p.s, w: base * p.s * .49, cx: 0, cy: 0, glow: 0 }));
 
             const count = mobile ? 6 : 10;
             streaks = [];
@@ -323,12 +335,107 @@
         function yAt(r, k, u, t) {
             const x = u * w;
             const ph = r.phase + t * r.speed + scrollPhase * (r.speed > 0 ? 1 : -1);
-            const center = h * r.y + r.tilt * (x - w / 2) + h * r.amp * Math.sin(u * r.freq * Math.PI * 2 + ph);
-            const twist = Math.cos(u * Math.PI * 1.6 + ph * 1.3) * r.spread;
-            return center + k * twist + k * k * 18 * Math.sin(ph + u * 4);
+            let center = h * r.y + r.tilt * (x - w / 2) + h * r.amp * Math.sin(u * r.freq * Math.PI * 2 + ph);
+            let twist = Math.cos(u * Math.PI * 1.6 + ph * 1.3) * r.spread;
+            let curl = k * k * 18 * Math.sin(ph + u * 4);
+            // Pull the ribbon into each linked phone and squeeze the bundle so it fits through the screen.
+            for (const i of r.through) {
+                const p = phones[i];
+                if (!p) continue;
+                const d = (x - p.cx) / (p.w * 1.7);
+                const g = Math.exp(-d * d);
+                center += (p.cy - center) * g;
+                twist *= 1 - .75 * g;
+                curl *= 1 - g;
+            }
+            return center + k * twist + curl;
+        }
+
+        function placePhones(t) {
+            for (const p of phones) {
+                p.cx = p.x * w;
+                p.cy = p.y * h + Math.sin(t * .8 + p.ph) * h * (mobile ? .006 : .012);
+                p.r = p.rot + Math.sin(t * .5 + p.ph) * .02;
+            }
+        }
+
+        // Skeleton screen layouts: [kind, x, y, w, h] as fractions of the screen (circle: [kind, x, y, diameter])
+        const LAYOUTS = [
+            [['bar', .08, .06, .55, .035], ['circle', .12, .17, .07], ['line', .26, .155, .5, .025], ['line', .26, .19, .34, .02], ['block', .08, .26, .84, .26], ['line', .08, .57, .7, .028], ['line', .08, .62, .5, .022], ['block', .08, .69, .4, .16], ['block', .52, .69, .4, .16]],
+            [['bar', .08, .06, .4, .035], ['block', .08, .13, .84, .1], ['circle', .14, .32, .06], ['line', .26, .305, .5, .025], ['circle', .14, .44, .06], ['line', .26, .425, .45, .025], ['circle', .14, .56, .06], ['line', .26, .545, .55, .025], ['block', .08, .7, .84, .07], ['block', .08, .8, .84, .07]],
+            [['block', .08, .07, .84, .36], ['line', .08, .48, .6, .03], ['line', .08, .53, .8, .022], ['line', .08, .57, .7, .022], ['block', .08, .65, .26, .12], ['block', .37, .65, .26, .12], ['block', .66, .65, .26, .12], ['bar', .2, .86, .6, .05]]
+        ];
+
+        function rr(x, y, ww, hh, r) {
+            ctx.beginPath();
+            if (ctx.roundRect) ctx.roundRect(x, y, ww, hh, r); else ctx.rect(x, y, ww, hh);
+        }
+
+        function drawPhone(p, t) {
+            const [ar, ag, ab] = accent;
+            const glow = p.glow;
+            ctx.save();
+            ctx.translate(p.cx, p.cy);
+            ctx.rotate(p.r);
+            const x = -p.w / 2, y = -p.h / 2, R = p.w * .14;
+
+            // outer glow when lit
+            if (glow > .02) {
+                rr(x - 3, y - 3, p.w + 6, p.h + 6, R + 3);
+                ctx.lineWidth = 8;
+                ctx.strokeStyle = `rgba(${ar},${ag},${ab},${(glow * .18).toFixed(3)})`;
+                ctx.stroke();
+            }
+            // body
+            rr(x, y, p.w, p.h, R);
+            ctx.fillStyle = 'rgba(21,24,30,.94)';
+            ctx.fill();
+            ctx.lineWidth = 1.5;
+            ctx.strokeStyle = `rgba(${ar},${ag},${ab},${(.3 + glow * .55).toFixed(3)})`;
+            ctx.stroke();
+            // dynamic-island notch
+            rr(-p.w * .14, y + p.h * .02, p.w * .28, p.h * .022, 6);
+            ctx.fillStyle = 'rgba(42,48,58,.9)';
+            ctx.fill();
+
+            // screen
+            const sx = x + 6, sy = y + 6, sw = p.w - 12, sh = p.h - 12;
+            ctx.save();
+            rr(sx, sy, sw, sh, R * .8);
+            ctx.clip();
+            if (glow > .02) {
+                ctx.fillStyle = `rgba(${ar},${ag},${ab},${(glow * .07).toFixed(3)})`;
+                ctx.fillRect(sx, sy, sw, sh);
+            }
+            ctx.fillStyle = 'rgba(42,48,58,.75)';
+            for (const el of LAYOUTS[p.L]) {
+                const [k, a, b, c, d] = el;
+                if (k === 'circle') {
+                    ctx.beginPath();
+                    ctx.arc(sx + a * sw + c * sw / 2, sy + b * sh + c * sw / 2, c * sw / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    rr(sx + a * sw, sy + b * sh, c * sw, d * sh, k === 'block' ? 8 : 4);
+                    ctx.fill();
+                }
+            }
+            // shimmer sweep across the skeleton
+            const cycle = ((t * .45 + p.ph * .3) % 1.6) / 1.6;
+            const band = sx - sw + cycle * sw * 3;
+            const sg = ctx.createLinearGradient(band, sy, band + sw * .6, sy + sh * .25);
+            sg.addColorStop(0, 'rgba(255,255,255,0)');
+            sg.addColorStop(.5, `rgba(${ar},${ag},${ab},${(.2 + glow * .25).toFixed(3)})`);
+            sg.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.globalCompositeOperation = 'source-atop';
+            ctx.fillStyle = sg;
+            ctx.fillRect(sx, sy, sw, sh);
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.restore();
+            ctx.restore();
         }
 
         function draw(t) {
+            placePhones(t);
             ctx.clearRect(0, 0, w, h);
             ctx.globalCompositeOperation = 'lighter';
             ctx.lineWidth = 1;
@@ -361,7 +468,11 @@
                 }
             }
 
-            // Streaks of light riding the ribbons
+            ctx.globalCompositeOperation = 'source-over';
+            for (const p of phones) drawPhone(p, t);
+            ctx.globalCompositeOperation = 'lighter';
+
+            // Streaks of light riding the ribbons (drawn over the phones, so they cross them and exit on the other side)
             for (const s of streaks) {
                 const r = ribbons[s.r];
                 const [cr, cg, cb] = r.color;
@@ -387,6 +498,10 @@
                 glow.addColorStop(1, 'rgba(220,255,240,0)');
                 ctx.fillStyle = glow;
                 ctx.fillRect(x1 - 10, y1 - 10, 20, 20);
+                // light up a phone while a streak passes through it
+                for (const p of phones) {
+                    if (Math.abs(x1 - p.cx) < p.w / 2 && Math.abs(y1 - p.cy) < p.h / 2) p.glow = 1;
+                }
             }
             ctx.globalCompositeOperation = 'source-over';
         }
@@ -396,6 +511,8 @@
             const dt = Math.min((now - (last || now)) / 1000, .05);
             last = now;
             scrollPhase += (targetScroll - scrollPhase) * .08; // eased parallax from scrolling
+            const fade = Math.pow(.18, dt);
+            for (const p of phones) p.glow *= fade;
             for (let i = 0; i < streaks.length; i++) {
                 const s = streaks[i];
                 s.u += s.v * dt;
